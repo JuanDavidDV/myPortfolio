@@ -19,8 +19,13 @@ const NavBar = () => {
       } else {
         setMenuStatus(null);
       }
-      
-  }
+  };
+
+  const closeMenu = () => {
+    setMenuStatus(null);
+    const menu = document.getElementById("toggle-menu");
+    menu.name = "menu";  // Reset the menu icon to 'menu'
+  };
 
   return (
     <header className="bg-zinc-600 py-3">
@@ -33,20 +38,20 @@ const NavBar = () => {
         <div className={`${menuStatus} duration-300 md:static absolute bg-zinc-600 md:min-h-fit min-h-80 left-0 top-[-100%] md:w-auto w-full flex items-center px-5`}>
           <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-12">
             <li>
-              <Link to="/" className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 ${isAbout ? "bg-blue-500 rounded-lg font-bold" : ""}`}>
+              <Link to="/" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 ${isAbout ? "bg-blue-500 rounded-lg font-bold" : ""}`}>
                 About
               </Link>
             </li>
             <li>
-              <Link to="/projects" className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 ${isProjects ? "bg-blue-500 rounded-lg font-bold" : ""}`}>
+              <Link to="/projects" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 ${isProjects ? "bg-blue-500 rounded-lg font-bold" : ""}`}>
                 Projects
               </Link>
             </li>
             <li>
-              <Link to="/experience" className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 ${isExperience ? "bg-blue-500 rounded-lg font-bold" : "" }`}>Experience</Link>
+              <Link to="/experience" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 ${isExperience ? "bg-blue-500 rounded-lg font-bold" : "" }`}>Experience</Link>
             </li>
             <li>
-              <Link to="/contact" className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 ${isContact ? "bg-blue-500 rounded-lg font-bold" : ""}`}>
+              <Link to="/contact" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 ${isContact ? "bg-blue-500 rounded-lg font-bold" : ""}`}>
                 Contact
               </Link>
             </li>
