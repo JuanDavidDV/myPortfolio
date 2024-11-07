@@ -18,14 +18,16 @@ const Projects = () => {
                   initial={{ opacity: 0, x: -100 }}
                   transition={{ duration: 1 }}  
                   className="w-full lg:w-1/4">
-                  <a href={project.link} target="_blank">
-                    <img src={project.image}
-                      width={400}
-                      height={400}
-                      alt={project.title}
-                      className="mb-6 rounded cursor-pointer hover:brightness-75 transition-all duration-150"
-                    />
-                  </a>
+                    <div className="max-w-[400px] w-full lg:max-w-[none]">
+                      <a href={project.link} target="_blank" >
+                        <img src={project.image}
+                          width={400}
+                          height={400}
+                          alt={project.title}
+                          className="mb-6 rounded cursor-pointer hover:brightness-75 transition-all duration-150"
+                        />
+                      </a>
+                    </div>  
                 </motion.div>
                 <motion.div
                   whileInView={{ opacity: 1, x: 0 }}
@@ -35,7 +37,7 @@ const Projects = () => {
                   <h3 className="mb-2 font-semibold text-2xl">{project.title}</h3>
                   <p className="mb-4 text-slate-700">{project.description}</p>
                   {project.technologies.map((tech, index) => (
-                    <span className="mr-2 rounded bg-teal-400 p-2 text-sm font-medium text-neutral-50" key={index}>
+                    <span className="mr-2 rounded bg-teal-500 p-2 text-sm font-medium text-neutral-50" key={index}>
                       {tech}
                     </span>
                   ))}

@@ -52,12 +52,12 @@ const ContactMe = () => {
     <section className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-lg w-full bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Contact Me</h2>
-        <div className="flex gap-10 justify-center">
+        <div className="flex gap-10 justify-center items-center">
           <a href="https://github.com/JuanDavidDV" target="_blank">
-            <img src={github} className="w-9 pt-2 opacity-60 hover:opacity-100 rounded-xl"/>
+            <img src={github} className="w-9 opacity-60 hover:opacity-100 rounded-xl"/>
           </a>
           <a href="https://www.linkedin.com/in/juan-david-dv/" target="_blank">
-            <img src={linkedin} className="w-14 opacity-60 hover:opacity-100 rounded-xl"/>
+            <img src={linkedin} className="w-12 opacity-60 hover:opacity-100 rounded-xl"/>
           </a>
           <a href="mailto:juandadazav@gmail.com">
             <MdOutlineEmail className="pt-1 text-5xl opacity-60 hover:opacity-100 rounded-xl" />
