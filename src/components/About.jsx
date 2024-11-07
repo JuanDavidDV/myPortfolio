@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { RiReactjsLine } from "react-icons/ri";
 import github from "../assets/images/github.png";
 import linkedin from "../assets/images/linkedIn.png";

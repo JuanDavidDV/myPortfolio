@@ -27,18 +27,13 @@ const Experience = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-                
+              </div>    
             </div>
-
           ))}
         </div>
-
-    </div>
+      </div>
     </main>
-  
   )
-  
 }
 
 export default Experience;
