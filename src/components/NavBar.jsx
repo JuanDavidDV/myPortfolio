@@ -41,7 +41,7 @@ const NavBar = () => {
               <Link to="/experience" className="text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350" href="#">Experience</Link>
             </li>
             <li>
-              <Link to="#" className="text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350">
+              <Link to="/contact" className="text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350">
                 Contact
               </Link>
             </li>

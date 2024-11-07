@@ -12,9 +12,23 @@ const Experience = () => {
                 <p className="mb-2 text-sm text-slate-700">
                   {experience.year}
                 </p>
+                <img width={150} height={100} className="mb-3 rounded" src={experience.image}/>
               </div>
-              <div className="w-full max-w-xl lg:w-3/4"> </div>
-
+              <div className="w-full max-w-xl lg:w-3/4">
+                <h3 className="mb-2 font-semibold">{experience.role} -{" "} 
+                  <span className="text-sm text-slate-600">
+                    {experience.company}  
+                  </span>    
+                </h3>
+                <ul className="my-5 list-disc ml-5 space-y-2">
+                  {experience.description.map((point, index) => (
+                    <li key={`experience-point-${index}`} className="text-sm">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+                
             </div>
 
           ))}
