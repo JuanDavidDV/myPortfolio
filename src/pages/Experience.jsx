@@ -45,9 +45,11 @@ const Experience = () => {
             </div>
           ))}
         </div>
-        <Link to="/contact">
-          <button className="p-3 rounded-lg bg-blue-600 text-xl text-white hover:brightness-125 transition-all duration-150 text-center">Let's connect! Contact me</button>
-        </Link>
+        <div className="flex justify-center my-10">
+          <Link to="/contact">
+            <button className="p-3 rounded-lg bg-blue-600 text-xl text-white hover:brightness-125 transition-all duration-150 text-center">Let's connect! Contact me</button>
+          </Link>
+        </div>
       </div>
     </main>
   )

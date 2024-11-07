@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { RiReactjsLine } from "react-icons/ri";
 import github from "../assets/images/github.png";
@@ -52,7 +53,7 @@ const iconVariants = (duration) => ({
 const About = () => {
   return (
     <section className="pg-4 lg:mb-24">
-      <div className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-tr to-blue-900 from-emerald-500 px-10">
+      <div id="about" className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-tr to-blue-900 from-emerald-500 px-10">
         <div className="w-max md:py-10">
           <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl md:text-6xl text-white font-bold">
             Hello World
@@ -80,7 +81,7 @@ const About = () => {
           </a>
         </div>
       </div>
-      <div className="pb-5">
+      <div id="skills" className="pb-5">
         <motion.h2
           whileInView={{ opacity: 1, y:0 }}
           initial={{ opacity: 0, y: -100 }}
@@ -142,7 +143,12 @@ const About = () => {
               <BiLogoNetlify className="text-5xl md:text-7xl text-teal-400"/>
             </motion.div>
           </motion.div>
-      </div>        
+      </div>  
+      <div className="flex justify-center my-10">
+        <Link to="/projects">
+          <button className="p-3 rounded-lg bg-blue-600 text-xl text-white hover:brightness-125 transition-all duration-150 text-center">Check my projects</button>
+        </Link>
+      </div>   
     </section>
   )
 }
