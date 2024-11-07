@@ -37,7 +37,7 @@ const Projects = () => {
           ))}
         </div>
         <div className="flex justify-center my-10">
-        <Link>
+        <Link to="/experience">
           <button class="p-3 rounded-lg bg-blue-600 text-xl text-white hover:brightness-125 transition-all duration-150 text-center">Check my experience</button>
         </Link>
       </div>

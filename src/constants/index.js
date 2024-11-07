@@ -4,6 +4,8 @@ import brainFlix from "../assets/images/brainflix.png";
 import bandsite from "../assets/images/bandsite.png";
 import travelSite from "../assets/images/Travelsite.png";
 import coffeeShop from "../assets/images/coffeeshop.png";
+import ocpLogo from "../assets/images/ocp-logo.png";
+import seneca from "../assets/images/seneca.png";
 
 export const PROJECTS = [
   {
@@ -53,6 +55,42 @@ export const PROJECTS = [
     technologies: ["HTML", "Sass"],
     link: "https://coffee-shop-juan-david.netlify.app/",
     githubLink: "https://github.com/JuanDavidDV/coffee_shop"
+  }
+]
+
+export const EXPERIENCE = [
+  {
+    year: "May 2023 - Present",
+    image: ocpLogo,
+    role: "Data Developer",
+    company: "Ontario College of Pharmacists",
+    description: [
+      "Developed SQL scripts to facilitate data extraction upon request, reducing processing time by 60%.",
+      "Critical thinking in Data Analysis, Data Visualization, QA, and user-testing of data extracted before submitting.",
+      "Built analytical tools that improved operational efficiency by 30% through actionable insights into KPIs"
+    ]
+  },
+  {
+    year: "November 2021 - May 2023",
+    image: ocpLogo,
+    role: "Software Trainer and Technical Support Analyst",
+    company: "Ontario College of Pharmacists",
+    description: [
+      "Provisioned employee workstations utilizing PowerShell, MS Azure, Endpoint and Intune.",
+      "Developed technical guides that exponentially increased user troubleshooting efficiency by 70%.",
+      "Accountable for technical support, with extensive troubleshooting skills in Microsoft Office 365."
+    ]
+  },
+  {
+    year: "November 2021 - May 2023",
+    image: ocpLogo,
+    role: "Information Technology Processes (Internship)",
+    company: "Ontario College of Pharmacists",
+    description: [
+      "Developed and improve guides to define the process in order to setup brand new computers and workstations for the company, which increased exponentially the efficiency at the moment of generating more equipment by 70%.",
+      "Led a project to upgrade and deploy over 140 computers to college staff across the province of Ontario.",
+      "Configured laptops and/or workstations to meet the College’s hardware and software standards; install and upgrade Windows 10 Pro, to new and old AIO (All in One) computer’s versions. "  
+    ]
   }
 ]
 
