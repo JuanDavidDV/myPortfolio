@@ -6,11 +6,14 @@ import { SiJavascript } from "react-icons/si";
 import { SiMicrosoftsqlserver } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { FaNodeJs } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { IoLogoGithub } from "react-icons/io";
+import { FaGitAlt } from "react-icons/fa6";
 
 const About = () => {
   return (
     <section className="pg-4 lg:mb-36">
-      <div class="flex flex-col min-h-screen items-center justify-center bg-gradient-to-tr to-blue-900 from-emerald-500 p-10">
+      <div class="flex flex-col min-h-screen items-center justify-center bg-gradient-to-tr to-blue-900 from-emerald-500 px-10">
         <div class="w-max md:py-10">
           <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl md:text-7xl text-white font-bold">
             Hello World
@@ -41,7 +44,7 @@ const About = () => {
           Technologies
         </h2>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <div>
+          <div className="p-4">
             <SiRubyonrails className="text-7xl text-red-500"/>
           </div>
           <div className="p-4">
@@ -57,7 +60,16 @@ const About = () => {
             <BiLogoPostgresql className="text-7xl text-blue-800" />
           </div>
           <div className="p-4">
-
+            <FaNodeJs className="text-7xl text-green-500" />
+          </div>
+          <div className="p-4">
+            <SiExpress className="text-7xl"/>
+          </div>
+          <div className="p-4">
+            <IoLogoGithub className="text-7xl" />
+          </div>
+          <div className="p-4">
+            <FaGitAlt className="text-7xl text-orange-600" />
           </div>
 
 
