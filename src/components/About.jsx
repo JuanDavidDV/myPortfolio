@@ -23,7 +23,7 @@ const About = () => {
     <section className="pg-4 lg:mb-36">
       <div class="flex flex-col min-h-screen items-center justify-center bg-gradient-to-tr to-blue-900 from-emerald-500 px-10">
         <div class="w-max md:py-10">
-          <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl md:text-7xl text-white font-bold">
+          <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl md:text-6xl text-white font-bold">
             Hello World
           </h1>
         </div>
@@ -101,13 +101,7 @@ const About = () => {
             <BiLogoNetlify className="text-5xl md:text-7xl text-teal-400"/>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center mb-10">
-        <Link>
-          <button class="p-3 rounded-lg bg-blue-600 text-xl text-white hover:brightness-125 transition-all duration-150 text-center">Check my projects</button>
-        </Link>
-      </div>
-        
+      </div>        
     </section>
   )
 }
