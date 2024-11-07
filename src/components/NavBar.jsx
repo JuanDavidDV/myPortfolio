@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 
 const NavBar = () => {
@@ -20,16 +20,22 @@ const NavBar = () => {
   return (
     <header className="bg-zinc-600 py-3">
       <nav className="flex justify-between items-center w-[92%] mx-auto">
-        <div>
-          <button className="text-white rounded-lg font-bold px-1 py-0.5 text-center bg-orange-500 hover:brightness-125 transition-all duration-150">Juan David DV</button>
-        </div>
+        <Link to="/">
+          <button className="text-white rounded-lg font-bold px-1 py-0.5 text-center bg-orange-500 hover:brightness-125 transition-all duration-150">
+            Juan David DV
+          </button>
+        </Link>
         <div className={`${menuStatus} duration-300 md:static absolute bg-zinc-600 md:min-h-fit min-h-80 left-0 top-[-100%] md:w-auto w-full flex items-center px-5`}>
           <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-12">
             <li>
-              <a className="text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350" href="#">About</a>
+              <NavLink to="/" className="text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350">
+                About
+              </NavLink>
             </li>
             <li>
-              <a className="text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350" href="#">Projects</a>
+              <NavLink to="/" className="text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350">
+                Projects
+              </NavLink>
             </li>
             <li>
               <a className="text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350" href="#">Experience</a>

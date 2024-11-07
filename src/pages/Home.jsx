@@ -1,9 +1,11 @@
-import Content from "../components/Content";
+import About from "../components/About";
+import Projects from "../components/Projects";
 
 const Home = () => {
   return (
-    <main>
-
+    <main className="home-page">
+      <About />
+      <Projects />
     </main>
   )
 
