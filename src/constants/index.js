@@ -13,7 +13,7 @@ export const PROJECTS = [
     title: "E-Commerce Rails",
     image: ecommerceRails,
     description: "A fully functional e-commerce website with features like product listing, users authentication, shopping cart, and real time purchase through Stripe.",
-    technologies: ["Ruby on Rails", "JavaScript", "Postgresql", "Tailwind"],
+    technologies: ["Ruby on Rails", "Postgresql", "Tailwind"],
     link: "#",
     githubLink: "https://github.com/JuanDavidDV/ecommerce"
   },
