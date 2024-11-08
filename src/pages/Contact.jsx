@@ -1,7 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import github from "../assets/images/github.png";
-import linkedin from "../assets/images/linkedIn.png";
+import linkedin from "../assets/images/linkedin.png";
 import { MdOutlineEmail } from "react-icons/md";
 
 const ContactMe = () => {
