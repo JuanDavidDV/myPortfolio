@@ -55,14 +55,14 @@ const About = () => {
     <section className="pg-4 lg:mb-24">
       <div id="about" className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-tr to-blue-900 from-emerald-500 px-10">
         <div className="w-max md:py-10">
-          <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl md:text-6xl text-white font-bold">
+          <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl md:text-5xl text-white font-bold">
             Hello World
           </h1>
         </div>
         <br/>
         <div>
           <div className="w-max md:py-10">
-            <h1 className=" animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-2xl md:text-6xl text-white font-bold md:mb-10">
+            <h1 className=" animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-2xl md:text-5xl text-white font-bold md:mb-10">
                 I am Juan David Daza Velosa
             </h1>
           </div>
