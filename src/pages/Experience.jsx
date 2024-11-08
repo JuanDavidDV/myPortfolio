@@ -53,6 +53,6 @@ const Experience = () => {
       </div>
     </main>
   )
-}
+};
 
 export default Experience;

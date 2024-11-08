@@ -1,23 +1,6 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { RiReactjsLine } from "react-icons/ri";
 import github from "../assets/images/github.png";
-import linkedin from "../assets/images/linkedIn.png";
-import { SiRubyonrails } from "react-icons/si";
-import { SiJavascript } from "react-icons/si";
-import { SiMicrosoftsqlserver } from "react-icons/si";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { FaNodeJs } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
-import { IoLogoGithub } from "react-icons/io";
-import { FaGitAlt } from "react-icons/fa6";
-import { FaHtml5 } from "react-icons/fa";
-import { IoLogoCss3 } from "react-icons/io";
-import { FaSass } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiPostman } from "react-icons/si";
-import { GrHeroku } from "react-icons/gr";
-import { BiLogoNetlify } from "react-icons/bi";
+import linkedin from "../assets/images/linkedin.png";
 
 const containerVariants = {
   hidden: { opacity: 0, x: -100},
@@ -48,7 +31,7 @@ const iconVariants = (duration) => ({
     }
 
   }
-})
+});
 
 const About = () => {
   return (
@@ -83,6 +66,6 @@ const About = () => {
       </div>
     </section>
   )
-}
+};
 
 export default About;

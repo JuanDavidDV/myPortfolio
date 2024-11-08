@@ -1,5 +1,5 @@
 import About from "../components/About";
-import Skills from "../components/Skills"
+import Skills from "../components/Skills";
 
 const Home = () => {
   return (
@@ -8,6 +8,6 @@ const Home = () => {
       <Skills />
     </main>
   )
-}
+};
 
 export default Home;

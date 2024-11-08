@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { RiReactjsLine } from "react-icons/ri";
-import github from "../assets/images/github.png";
-import linkedin from "../assets/images/linkedIn.png";
 import { SiRubyonrails } from "react-icons/si";
 import { SiJavascript } from "react-icons/si";
 import { SiMicrosoftsqlserver } from "react-icons/si";
@@ -48,7 +46,7 @@ const iconVariants = (duration) => ({
     }
 
   }
-})
+});
 
 const Skills = () => {
   return (
@@ -201,6 +199,6 @@ const Skills = () => {
       </div>
     </section>   
   )
-}
+};
 
 export default Skills;

@@ -63,6 +63,6 @@ const NavBar = () => {
       </nav>
     </header>
   )
-}
+};
 
 export default NavBar;
