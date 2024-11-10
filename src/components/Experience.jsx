@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 
 const Experience = () => {
   return (
-    <main>
-      <div className="pb-4 mx-10">
+    <section id="experience">
+      <div className="px-10 pt-10 bg-sky-50">
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.5 }}
-          className="my-20 text-center text-4xl md:text-5xl text-gray-800 font-bold">Experience</motion.h2>
+          className="py-20 text-center text-4xl md:text-5xl text-gray-800 font-bold">Experience</motion.h2>
         <div>
           {EXPERIENCE.map((experience, index) => (
-            <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
+            <div key={index} className="pb-8 flex flex-wrap lg:justify-center">
               <motion.div 
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: -100 }}
@@ -45,13 +45,8 @@ const Experience = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center my-10">
-          <Link to="/contact">
-            <button className="p-3 rounded-lg bg-blue-600 text-xl text-white hover:brightness-125 transition-all duration-150 text-center">Let's connect! Contact me</button>
-          </Link>
-        </div>
       </div>
-    </main>
+    </section>
   )
 };
 
