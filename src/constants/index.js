@@ -14,7 +14,7 @@ export const PROJECTS = [
     image: ecommerceRails,
     description: "A fully functional e-commerce website with features like product listing, users authentication, shopping cart, and real time purchase through Stripe.",
     technologies: ["Ruby on Rails", "JavaScript", "Postgresql", "Tailwind"],
-    link: "#",
+    link: "https://vast-forest-11849-c1796dfd8a1e.herokuapp.com",
     githubLink: "https://github.com/JuanDavidDV/ecommerce"
   },
   {

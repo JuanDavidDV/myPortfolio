@@ -6,7 +6,13 @@
 
 :root {
   font-family: "Inter", sans-serif;
-  background-color: rgb(243, 243, 243);
   box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
   overflow-x: hidden;
 }
