@@ -52,7 +52,7 @@ export const PROJECTS = [
   {
     title: "Coffee Shop",
     image: coffeeShop,
-    description: "A functional coffee shop website used to demonstrate comprehension of animations, Flexbox, SASS, BEM principles and HTML. This was the first website I built.",
+    description: "A coffee shop website used to demonstrate comprehension of animations, Flexbox, SASS, BEM principles and HTML. This was the first website I built.",
     technologies: ["HTML", "Sass"],
     link: "https://coffee-shop-juan-david.netlify.app/",
     githubLink: "https://github.com/JuanDavidDV/coffee_shop"
