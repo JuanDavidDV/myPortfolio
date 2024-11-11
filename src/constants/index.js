@@ -10,7 +10,7 @@ import ttc from "../assets/images/ttc.svg"
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Rails",
+    title: "E-Commerce",
     image: ecommerceRails,
     description: "A fully functional e-commerce website with features like product listing, users authentication, shopping cart, and real time purchase through Stripe.",
     technologies: ["Ruby on Rails", "JavaScript", "Postgresql", "Tailwind"],
@@ -52,7 +52,7 @@ export const PROJECTS = [
   {
     title: "Coffee Shop",
     image: coffeeShop,
-    description: "A functional coffeshop website used to demonstrate comprehension of animations, Flexbox, SASS, BEM principles and HTML. This was the first website I built.",
+    description: "A functional coffee shop website used to demonstrate comprehension of animations, Flexbox, SASS, BEM principles and HTML. This was the first website I built.",
     technologies: ["HTML", "Sass"],
     link: "https://coffee-shop-juan-david.netlify.app/",
     githubLink: "https://github.com/JuanDavidDV/coffee_shop"
