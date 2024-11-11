@@ -44,7 +44,7 @@ export const PROJECTS = [
   {
     title: "Travel Site",
     image: travelSite,
-    description: "A Travel website used to demonstrate comprehension of Flexbox, SASS, BEM principles and HTML. This was the second website I built.",
+    description: "A responsive travel website used to demonstrate comprehension of Flexbox, SASS, BEM principles, responsive design, and HTML. This was the second website I built.",
     technologies: ["HTML", "Sass"],
     link: "https://travel-site-juan-david.netlify.app/",
     githubLink: "https://github.com/JuanDavidDV/travel_site"
