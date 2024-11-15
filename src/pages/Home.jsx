@@ -10,6 +10,7 @@ const Home = () => {
     <main className="home-page">
       <About />
       <Skills />
+      <Awards />
       <Projects />
       <Experience />
       <Contact />

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Element, Link } from "react-scroll";
 
-const SECTIONS = ["about", "skills", "projects", "experience", "contact"];
+const SECTIONS = ["about", "skills", "awards", "projects", "experience", "contact"];
 
 const NavBar = () => {
   const [menuStatus, setMenuStatus] = useState(false);
@@ -18,7 +18,7 @@ const NavBar = () => {
     SECTIONS.forEach((section) => {
       const element = document.getElementById(section);
       const rect = element.getBoundingClientRect();
-      if ((section === "about" || section === "skills") && rect.top <= 100 && rect.bottom >= 10) {
+      if ((section === "about" || section === "skills" || section === "awards") && rect.top <= 100 && rect.bottom >= 10) {
         currentSection = "about";
       }
       else if (rect.top <= 10 && rect.bottom >= 10) {

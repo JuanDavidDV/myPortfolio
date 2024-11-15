@@ -1,6 +1,5 @@
 import { EXPERIENCE } from "../constants";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Experience = () => {
   return (
@@ -9,8 +8,9 @@ const Experience = () => {
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
-          transition={{ duration: 0.5 }}
-          className="py-20 text-center text-4xl md:text-5xl text-gray-800 font-bold">Experience</motion.h2>
+          transition={{ duration: 1 }}
+          className="py-20 text-center text-4xl md:text-5xl text-gray-800 font-bold">Experience
+        </motion.h2>
         <div>
           {EXPERIENCE.map((experience, index) => (
             <div key={index} className="pb-8 flex flex-wrap lg:justify-center">

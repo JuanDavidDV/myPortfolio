@@ -8,7 +8,7 @@ const Projects = () => {
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5  }}
+        transition={{ duration: 1 }}
         className="py-20 text-center text-4xl md:text-5xl text-gray-800 font-bold">Projects</motion.h2>
           <div>
             {PROJECTS.map((project, index) => (
@@ -54,7 +54,6 @@ const Projects = () => {
                     </a>
                   </div>
                 </motion.div>
-
               </div>
             ))}
           </div>
