@@ -10,7 +10,7 @@ const ContactMe = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Form validation
@@ -23,8 +23,9 @@ const ContactMe = () => {
     setError("");
 
     // Send the email using emailjs
-    emailjs
-      .send(
+    try {
+      // Send the email using emailjs
+      const response = await emailjs.send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
@@ -34,18 +35,22 @@ const ContactMe = () => {
           message: message,
         },
         import.meta.env.VITE_APP_EMAILJS_USER_ID
-      )
-      .then((response) => {
-        setName("");
-        setEmail("");
-        setMessage("");
-        console.log("Email sent successfully!", response);
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-      });
-
-      alert("Email has been sent!")
+      );
+  
+      // Reset the form fields after a successful response
+      console.log("Email sent successfully!", response);
+  
+      // Reset form state
+      setName("");
+      setEmail("");
+      setMessage("");
+  
+      // Show alert after resetting the form
+      alert("Email has been sent!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setError("There was an issue sending your message. Please try again.");
+    }
   };
 
   return (
