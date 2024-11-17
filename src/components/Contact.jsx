@@ -22,10 +22,6 @@ const ContactMe = () => {
     // Clear previous error message
     setError("");
 
-    console.log("EmailJS Service ID:", import.meta.env.VITE_APP_EMAILJS_SERVICE_ID);
-  console.log("EmailJS Template ID:", import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID);
-  console.log("EmailJS User ID:", import.meta.env.VITE_APP_EMAILJS_USER_ID);
-
     // Send the email using emailjs
     try {
       // Send the email using emailjs
