@@ -36,10 +36,10 @@ const ContactMe = () => {
         import.meta.env.VITE_APP_EMAILJS_USER_ID
       )
       .then((response) => {
-        console.log("Email sent successfully!", response);
         setName("");
         setEmail("");
         setMessage("");
+        console.log("Email sent successfully!", response);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
