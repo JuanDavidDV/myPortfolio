@@ -8,3 +8,6 @@ Based in Canada 🍁. I am a passionate Software Developer, specialized in Full-
     <img src="https://skillicons.dev/icons?i=js,react,tailwind,vscode,git" />
   </a>
 </p>
+
+# Website 
+Click the following link to access my portfolio: https://www.juandazav.ca/
