@@ -15,7 +15,6 @@ import { FaSass } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiPostman } from "react-icons/si";
 import { GrHeroku } from "react-icons/gr";
-import { BiLogoNetlify } from "react-icons/bi";
 
 const containerVariants = {
   hidden: { opacity: 0, x: -100},
