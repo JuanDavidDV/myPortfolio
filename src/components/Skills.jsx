@@ -65,7 +65,7 @@ const Skills = () => {
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-2 md:p-4">
           <SiRubyonrails className="text-5xl md:text-7xl text-red-500"/>
         </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
+        <motion.div initial="initial" animate="animate" variants={iconVariants(2)} className="p-2 md:p-4">
           <DiRuby className="text-5xl md:text-7xl text-red-500" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
