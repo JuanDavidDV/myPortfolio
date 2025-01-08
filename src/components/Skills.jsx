@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { RiReactjsLine } from "react-icons/ri";
+import { DiRuby } from "react-icons/di";
 import { SiRubyonrails } from "react-icons/si";
 import { SiJavascript } from "react-icons/si";
 import { SiMicrosoftsqlserver } from "react-icons/si";
@@ -66,6 +67,9 @@ const Skills = () => {
           <SiRubyonrails className="text-5xl md:text-7xl text-red-500"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
+          <DiRuby className="text-5xl md:text-7xl text-red-500" />
+        </motion.div>
+        <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
           <RiReactjsLine className="text-5xl md:text-7xl text-cyan-400" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
@@ -106,9 +110,6 @@ const Skills = () => {
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3.5)} className="p-2 md:p-4">
           <GrHeroku className="text-5xl md:text-7xl text-purple-600"/>
-        </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(6)} className="p-2 md:p-4">
-          <BiLogoNetlify className="text-5xl md:text-7xl text-teal-400"/>
         </motion.div>
       </motion.div>
     </section>   
