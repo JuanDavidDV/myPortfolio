@@ -75,9 +75,10 @@ export const EXPERIENCE = [
     role: "Data Developer",
     company: "Ontario College of Pharmacists",
     description: [
-      "Developed SQL scripts to facilitate data extraction upon request, reducing processing time by 70%.",
-      "Critical thinking in Data Analysis, Data Visualization, QA, and user-testing of data extracted before submitting.",
-      "Built analytical tools that improved operational efficiency by 60% through actionable insights into KPIs."
+      "Developed SQL scripts to facilitate data extraction for the Government of Ontario upon request, reducing processing time by 70%.",
+      "Validated extracted data applying business analysis, data visualization, and QA to ensure accuracy and reliability before submission.",
+      "Accelerated CRM deployment by 30% by assisting in data migration between two systems, comparing values from SSMS databases and Microsoft Power Platform.",
+      "Built analytical tools within Excel to improve operational efficiency by 60% through actionable insights into KPIs."
     ]
   },
   {
@@ -87,8 +88,8 @@ export const EXPERIENCE = [
     company: "Ontario College of Pharmacists",
     description: [
       "Provisioned employee workstations utilizing PowerShell, MS Azure, Endpoint and Intune.",
-      "Developed technical guides that exponentially increased user troubleshooting efficiency by 70%.",
-      "Accountable for technical support, with extensive troubleshooting skills in Microsoft Office 365."
+      "Developed technical guides that exponentially increased user troubleshooting efficiency by 70% in O365 apps.",
+      "Managed Active Directory by creating and deleting employee accounts based on job roles and requirements."
     ]
   },
   {
@@ -97,20 +98,9 @@ export const EXPERIENCE = [
     role: "Information Technology Processes (Internship)",
     company: "Ontario College of Pharmacists",
     description: [
-      "Developed and improve guides to define the process in order to setup brand new computers and workstations for the company, which increased exponentially the efficiency at the moment of generating more equipment by 70%.",
       "Led a project to upgrade and deploy over 140 computers to college staff across the province of Ontario.",
-      "Configured laptops and/or workstations to meet the College’s hardware and software standards; install and upgrade Windows 10 Pro, to new and old AIO (All in One) computer’s versions. "  
-    ]
-  },
-  {
-    year: "May 2019 - September 2020",
-    image: seneca,
-    role: "Student Ambassador Seneca International (Part Time)",
-    company: "Seneca College",
-    description: [
-      "Developed an application database using Excel, by evaluating applicants according to their background in education, this significantly reduced processing time by 60% and increased the college admission department’s satisfaction.",
-      "Led and supported a new project for Latin American applicants to address their inquiries related to the application process at Seneca, resulting in increased enrollment numbers.",
-      "Responsible to assist international applicants over the phone, by emails, and in person, by providing information to help them make informed decisions."  
+      "Inspected and troubleshoot technical and end-user problems related to workstations and desktop applications.",
+      "Customized new-hire trainings to address individual learning styles, covering company best practices for the current role."
     ]
   },
   {
@@ -119,9 +109,19 @@ export const EXPERIENCE = [
     role: "TTC Communications Engineering Department: One Call Coordinator (Internship)",
     company: "Toronto Transit Commission (TTC)",
     description: [
-      "Managed “ON1Call” by authorizing excavations in Toronto, and evaluating contractors submission to assess risks and protect TTC Communications underground infrastructure.",
-      "Organized, designed, and labeled information from all the electronics cabinets of 'Inglis Building', and then update the information to DC Track Sunbird DCIM. This increased efficiency by 80% at the moment to locate and store a device in a cabinet",
-      "Experienced providing interdisciplinary engineering counsel to support engineering projects."  
+      "Managed “ON1Call”, approving excavations in Toronto and assessing contractor submissions to mitigate risks and protect TTC Communications underground infrastructure.",
+      "Analyzed and determined possible damage to the communications cables due to excavations done in the City of Toronto.",
+      "Organized, labeled, and updated electronics cabinet data for the Inglis building in DC Track Sunbird DCIM, improving device location and storage efficiency by 80%."  
     ]
-  }
+  },
+  {
+    year: "May 2019 - September 2020",
+    image: seneca,
+    role: "Student Ambassador Seneca International (Part Time)",
+    company: "Seneca College",
+    description: [
+      "Developed an application database in Excel to evaluate applicants based on their educational background, reducing processing time by 60%, improving college admissions department satisfaction, and increasing enrollment numbers.",
+      "Assisted international applicants via phone, email, and in person by providing information to support informed decision-making of the programs that Seneca College offers."  
+    ]
+  }  
 ]
