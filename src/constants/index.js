@@ -6,9 +6,16 @@ import travelSite from "../assets/images/Travelsite.png";
 import coffeeShop from "../assets/images/coffeeshop.png";
 import ocpLogo from "../assets/images/ocp-logo.png";
 import seneca from "../assets/images/seneca.png";
-import ttc from "../assets/images/ttc.svg"
+import ttc from "../assets/images/ttc.svg";
+import spotifyRails from "../assets/images/spotifyRails.png";
 
 export const PROJECTS = [
+  {
+    title: "Spotify-Rails",
+    image: spotifyRails,
+    description: "Developed Spotify-Rails, a streaming music platform enabling artist payments via Stripe.",
+    technologies: ["Ruby on Rails", "JavaScript", "Pos"]
+  },
   {
     title: "E-Commerce",
     image: ecommerceRails,
