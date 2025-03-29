@@ -13,14 +13,16 @@ export const PROJECTS = [
   {
     title: "Spotify-Rails",
     image: spotifyRails,
-    description: "Developed Spotify-Rails, a streaming music platform enabling artist payments via Stripe.",
-    technologies: ["Ruby on Rails", "JavaScript", "Pos"]
+    description: "Spotify-Rails is a streaming music platform enabling artist payments via Stripe.",
+    technologies: ["Ruby on Rails", "JavaScript", "Postgresql", "Tailwind", "Cron Jobs", "AWS"],
+    link: "https://spotify-rails-5858064d71c3.herokuapp.com",
+    githubLink: "https://github.com/JuanDavidDV/spotify-rails"
   },
   {
     title: "E-Commerce",
     image: ecommerceRails,
     description: "A fully functional e-commerce website with features like product listing, users authentication, shopping cart, and real time purchase through Stripe.",
-    technologies: ["Ruby on Rails", "JavaScript", "Postgresql", "Tailwind"],
+    technologies: ["Ruby on Rails", "JavaScript", "Postgresql", "Tailwind", "AWS"],
     link: "https://vast-forest-11849-c1796dfd8a1e.herokuapp.com",
     githubLink: "https://github.com/JuanDavidDV/ecommerce"
   },
