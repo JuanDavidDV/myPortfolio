@@ -1,4 +1,5 @@
 import About from "../components/About";
+import BrainAnimation from "../components/Brain-Animation";
 import Skills from "../components/Skills";
 import Awards from "../components/Awards";
 import Projects from "../components/Projects";
@@ -9,6 +10,7 @@ const Home = () => {
   return (
     <main className="home-page">
       <About />
+      <BrainAnimation />
       <Skills />
       <Awards />
       <Projects />
