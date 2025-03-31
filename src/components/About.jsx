@@ -9,25 +9,49 @@ import { useEffect, useRef, useState } from "react"
 
 const PATHS = data.economics[0].paths[0];
 
-const Tube = () => {
-  const points = [];
-  for (let i = 0; i < 10; i++) {
-    points.push(
-      new THREE.Vector3(
-        (i - 5) * 0.5,
-        Math.sin(i * 2) * 10 + 5,
-        0
+const curves = [];
+// Curves look
+for (let i = 0; i < 100; i++) {
+  let points = [];
+  // Points look
+  for(let j = 0; j < 100; j++) {  
+  points.push(
+      new THREE.Vector3().setFromSphericalCoords(
+        1,
+        (i / 100) * Math.PI,
+        (j / 100) * Math.PI *2
       )
-    )
+    );
   }
-  const curve = new THREE.CatmullRomCurve3(points)
+  let tempCurve = new THREE.CatmullRomCurve3(points);
+  curves.push(tempCurve);
+};
+
+console.log(curves)
+
+const Tube = ({curve}) => {
+ /*  const points = [];
+  for (let i = 0; i < 10; i++) {
+    points.push(new THREE.Vector3((i - 5) * 0.5, Math.sin(i * 2) * 10 + 5, 0));
+  }
+  const curve = new THREE.CatmullRomCurve3(points) */
   return <>
     <mesh>
       <tubeGeometry args={[curve, 64, 0.1, 8, false]} />
       <meshStandardMaterial color="hotpink" />
     </mesh>
   </>
-}
+};
+
+const Tubes = () => {
+  return (
+    <>
+      {curves.map((curve, index) => (
+        <Tube curve={curve} key={index} />
+      ))}
+    </>
+  )
+};
 
 const containerVariants = {
   hidden: { opacity: 0, x: -100},
@@ -62,7 +86,7 @@ const iconVariants = (duration) => ({
 
 const About = () => {
     const canvasContainerRef = useRef(null);
-    const [canvasHeight, setCanvasHeight] = useState("100vh");
+    const [canvasHeight, setCanvasHeight] = useState("50vh");
   
     useEffect(() => { // useEffect created to force canvas size. Tailwind was affecting default size
       const updateCanvasSize = () => {
@@ -108,14 +132,10 @@ const About = () => {
           </div>
         </div>
         <div ref={canvasContainerRef} className="absolute top-32 left-0 w-full h-full z-0">
-          <Canvas style={{ width: "100%" }} className="absolute top-0 left-0">
+          <Canvas style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
-            <mesh>
-              <boxGeometry args={[1, 1, 1]} />
-              <meshStandardMaterial color="hotpink" />
-            </mesh>
-            <Tube />
+            <Tubes />
             <OrbitControls />
           </Canvas>
         </div>
