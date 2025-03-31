@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 
 const containerVariants = {
   hidden: { opacity: 0, x: -100},
@@ -69,6 +70,7 @@ const About = () => {
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="hotpink" />
           </mesh>
+          <OrbitControls />
         </Canvas>
       </div>
     </section>
