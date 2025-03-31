@@ -9,17 +9,19 @@ import { useEffect, useRef, useState } from "react"
 
 const PATHS = data.economics[0].paths[0];
 
+const randomRange = (min, max) => Math.random() * (max - min) + min;
 const curves = [];
 // Curves look
 for (let i = 0; i < 100; i++) {
   let points = [];
+  let lenght = randomRange(0.5, 1)
   // Points look
   for(let j = 0; j < 100; j++) {  
   points.push(
       new THREE.Vector3().setFromSphericalCoords(
         1,
-        (i / 100) * Math.PI,
-        (j / 100) * Math.PI *2
+        (j / 100) * Math.PI * lenght,
+        (i / 100) * Math.PI *2
       )
     );
   }
