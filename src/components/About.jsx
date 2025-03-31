@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { data } from "../assets/data";
 import * as THREE from "three";
@@ -14,14 +14,14 @@ const curves = [];
 // Curves look
 for (let i = 0; i < 100; i++) {
   let points = [];
-  let lenght = randomRange(0.5, 1)
+  let lenght = randomRange(0.1, 1)
   // Points look
   for(let j = 0; j < 100; j++) {  
   points.push(
       new THREE.Vector3().setFromSphericalCoords(
         1,
-        (j / 100) * Math.PI * lenght,
-        (i / 100) * Math.PI *2
+        Math.PI - (j / 100) * Math.PI * lenght,
+        (i / 100) * Math.PI * 2
       )
     );
   }
@@ -39,7 +39,7 @@ const Tube = ({curve}) => {
   const curve = new THREE.CatmullRomCurve3(points) */
   return <>
     <mesh>
-      <tubeGeometry args={[curve, 64, 0.1, 8, false]} />
+      <tubeGeometry args={[curve, 64, 0.01, 8, false]} />
       <meshStandardMaterial color="hotpink" />
     </mesh>
   </>
@@ -107,8 +107,8 @@ const About = () => {
     return (
       <section
         id="about"
-        className="relative flex flex-col gap-5 lg:mb-24 w-dvh bg-gradient-to-tr to-blue-900 from-emerald-500 px-5 md:px-12 min-h-screen">  
-        <div id="about" className="relative z-10 flex flex-col pt-20">
+        className="relative flex flex-col gap-5 lg:mb-24 w-dvh bg-black px-5 md:px-12 min-h-screen">  
+        <div id="about" className="relative z-10 flex flex-col pt-24">
           <div>
             <h1 className="type-name text-4xl text-white md:text-5xl font-bold"></h1>
           </div>
@@ -124,17 +124,18 @@ const About = () => {
             <motion.div initial="hidden" animate="visible" variants={containerVariants}>
               <div className="pt-2 flex gap-7">
                 <a href="https://github.com/JuanDavidDV" target="_blank">
-                  <BsGithub className="w-10 pt-3 text-5xl opacity-60 hover:opacity-100 rounded-xl" />
+                  <BsGithub className="w-10 bg-white mt-3 text-5xl opacity-60 hover:opacity-100 rounded-xl" />
                 </a>
                 <a href="https://www.linkedin.com/in/juan-david-dv/" target="_blank">
-                  <IoLogoLinkedin className="w-10 pt-3 text-5xl opacity-60 hover:opacity-100 rounded-xl" />
+                  <IoLogoLinkedin className="w-10 bg-white mt-3 text-5xl opacity-60 hover:opacity-100 rounded-xl" />
                 </a>
               </div>
             </motion.div>
           </div>
         </div>
-        <div ref={canvasContainerRef} className="absolute top-32 left-0 w-full h-full z-0">
+        <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0 mt-24">
           <Canvas style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
+            <color attach="background" args={["black"]}/>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
             <Tubes />
