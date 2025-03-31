@@ -11,7 +11,7 @@ export default {
     require('tailwind-typewriter')({
       wordsets: {
           name: {
-              words: ['I am Juan David Daza Velosa '],
+              words: ['Hello world... I am Juan David '],
               repeat: 0,
               eraseSpeed: 0,
               writeSpeed: 0.1,
