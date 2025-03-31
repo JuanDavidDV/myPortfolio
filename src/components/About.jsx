@@ -36,7 +36,7 @@ const iconVariants = (duration) => ({
 
 const About = () => {
   return (
-    <section id="about" className="pg-4 lg:mb-24 w-dvh bg-gradient-to-tr to-blue-900 from-emerald-500 px-5 md:px-10">
+    <section id="about" className="pg-4 lg:mb-24 w-dvh bg-gradient-to-tr to-blue-900 from-emerald-500 px-5 md:px-10 min-h-screen">
       <div id="about" className="flex flex-col pt-32">
         <div>
           <h1 className="type-name text-4xl text-white md:text-5xl font-bold">              
@@ -46,7 +46,7 @@ const About = () => {
         <div>
           <motion.div initial="hidden" animate="visible" variants={containerVariants}>
             <p className="text-white text-lg md:text-lg w-[100%] md:w-[70%]">
-              Based in <span className="font-bold">Canada</span> 🍁. I am a passionate <span className="font-bold">Software Developer</span>, specialized in <span className="font-bold">Full-stack Development</span> through hands-on learning, and building real-world applications.   
+              Based in <span className="font-bold">Canada</span> 🍁 I am a passionate <span className="font-bold">Software Developer</span>, specialized in <span className="font-bold">Full-stack Development</span> through hands-on learning, and building real-world applications.   
             </p>
           </motion.div>
         </div>
