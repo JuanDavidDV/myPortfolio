@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { Canvas, extend } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, shaderMaterial } from "@react-three/drei";
 import { data } from "../assets/data";
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react"
@@ -29,20 +29,40 @@ for (let i = 0; i < 100; i++) {
   curves.push(tempCurve);
 };
 
-console.log(curves)
-
 const Tube = ({curve}) => {
- /*  const points = [];
-  for (let i = 0; i < 10; i++) {
-    points.push(new THREE.Vector3((i - 5) * 0.5, Math.sin(i * 2) * 10 + 5, 0));
-  }
-  const curve = new THREE.CatmullRomCurve3(points) */
-  return <>
-    <mesh>
-      <tubeGeometry args={[curve, 64, 0.01, 8, false]} />
-      <meshStandardMaterial color="hotpink" />
-    </mesh>
+  const brainMat = useRef();
+
+  const BrainMaterial = shaderMaterial(
+    { time: 0, color: new THREE.Color(0.2, 0.4, 0.1) },
+    // vertex shader
+    /*glsl*/`
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    // fragment shader
+    /*glsl*/`
+      uniform float time;
+      uniform vec3 color;
+      varying vec2 vUv;
+      void main() {
+        gl_FragColor.rgba = vec4(color,1.);
+      }
+    `
+  )
+
+  extend({ BrainMaterial });
+
+  return (
+    <>
+      <mesh>
+        <tubeGeometry args={[curve, 64, 0.01, 8, false]} />
+        <brainMaterial ref={brainMat} />
+      </mesh>
   </>
+  )
 };
 
 const Tubes = () => {
@@ -134,7 +154,7 @@ const About = () => {
           </div>
         </div>
         <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0 mt-24">
-          <Canvas style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
+          <Canvas camera={{position:[0,0,2.5]}} style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
             <color attach="background" args={["black"]}/>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
