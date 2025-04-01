@@ -7,7 +7,7 @@ import { data } from "../assets/data";
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react"
 
-const PATHS = data.economics[0].paths[0];
+const PATHS = data.economics[0].paths;
 
 const randomRange = (min, max) => Math.random() * (max - min) + min;
 const curves = [];
@@ -29,6 +29,18 @@ for (let i = 0; i < 100; i++) {
   curves.push(tempCurve);
 };
 
+const brainCurves = [];
+PATHS.forEach((path) => {
+  let points = [];
+  
+  for (let i = 0; i < path.length; i+=3 ) {
+    points.push(new THREE.Vector3(path[i],path[i + 1],path[i + 2]));
+  }
+  
+  let tempcurve = new THREE.CatmullRomCurve3(points);
+  brainCurves.push(tempcurve);
+});
+console.log('brainCurves', brainCurves)
 
 const Tube = ({curve}) => {
   const brainMat = useRef();
@@ -73,14 +85,14 @@ const Tube = ({curve}) => {
         <tubeGeometry args={[curve, 64, 0.01, 3, false]} />
         <brainMaterial ref={brainMat} side={THREE.DoubleSide} />
       </mesh>
-  </>
+    </>
   )
 };
 
 const Tubes = () => {
   return (
     <>
-      {curves.map((curve, index) => (
+      {brainCurves.map((curve, index) => (
         <Tube curve={curve} key={index} />
       ))}
     </>
