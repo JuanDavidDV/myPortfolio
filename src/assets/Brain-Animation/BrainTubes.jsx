@@ -1,8 +1,7 @@
-import { Canvas, extend, useFrame } from "@react-three/fiber";
-import { OrbitControls, shaderMaterial } from "@react-three/drei";
-import { data } from "./data";
+import { extend, useFrame } from "@react-three/fiber";
+import { shaderMaterial } from "@react-three/drei";
 import * as THREE from "three";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 
 const Tube = ({curve}) => {
