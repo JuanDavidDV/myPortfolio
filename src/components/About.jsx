@@ -4,7 +4,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import { Tubes } from "../assets/Brain-Animation/BrainTubes";
 import * as THREE from "three";
 import { data } from "../assets/Brain-Animation/data";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { OrbitControls, shaderMaterial } from "@react-three/drei";
 
@@ -43,7 +43,69 @@ PATHS.forEach((path) => {
   brainCurves.push(tempcurve);
 });
 
+const BrainParticles = (allthecurves) => {
 
+  let positions = useMemo(() => {
+    let positions = [];
+  
+    for(let i = 0; i < 100; i++) {
+      positions.push(
+        randomRange(-1, 1),
+        randomRange(-1, 1),
+        randomRange(-1, 1)
+      )
+
+    }
+    return new Float32Array(positions)
+  },[])
+
+  const BrainParticleMaterial = shaderMaterial(
+    { time: 0, color: new THREE.Color(0.1, 0.3, 0.6) },
+    // vertex shader
+    /*glsl*/`
+      varying vec2 vUv;
+      uniform float time;
+      varying float vProgress;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_PointSize = 3. * (1. / -mvPosition.z);
+        gl_PointSize = 50.0;
+      }
+    `,
+    // fragment shader
+    /*glsl*/`
+      uniform float time;
+      void main() {
+        vec2 st = gl_PointCoord.xy;
+        gl_FragColor = vec4(st,0.,1.);
+      }
+    `
+  )
+    
+  extend({ BrainParticleMaterial });
+
+  return <>
+  <points>
+    <bufferGeometry attach="geometry">
+      <bufferAttribute
+        attach="attributes-position"
+        count={positions.length / 3}
+        array={positions}
+        itemSize={3}
+      />
+    </bufferGeometry>
+    <brainParticleMaterial 
+      attach="material"
+      depthTest={false}
+      transparent={true}
+      depthWrite={false}
+      blending={THREE.AdditiveBlending} 
+    />
+  </points>
+  </>
+}
 
 const containerVariants = {
   hidden: { opacity: 0, x: -100},
@@ -129,6 +191,7 @@ const About = () => {
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
             <Tubes allthecurves={brainCurves} />
+            <BrainParticles allthecurves={brainCurves} />
             <OrbitControls />
           </Canvas>
         </div>
