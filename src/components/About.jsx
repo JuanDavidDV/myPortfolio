@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { Canvas, extend } from "@react-three/fiber";
+import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { OrbitControls, shaderMaterial } from "@react-three/drei";
 import { data } from "../assets/data";
 import * as THREE from "three";
@@ -29,16 +29,24 @@ for (let i = 0; i < 100; i++) {
   curves.push(tempCurve);
 };
 
+
 const Tube = ({curve}) => {
   const brainMat = useRef();
+
+  useFrame(({clock}) => {
+    brainMat.current.uniforms.time.value = clock.getElapsedTime()
+  })
 
   const BrainMaterial = shaderMaterial(
     { time: 0, color: new THREE.Color(0.2, 0.4, 0.1) },
     // vertex shader
     /*glsl*/`
       varying vec2 vUv;
+      uniform float time;
+      varying float vProgress;
       void main() {
         vUv = uv;
+        vProgress = smoothstep(-1.,1.,sin(vUv.x * 12. + time * 5.));
         gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
       }
     `,
@@ -47,8 +55,12 @@ const Tube = ({curve}) => {
       uniform float time;
       uniform vec3 color;
       varying vec2 vUv;
+      varying float vProgress;
       void main() {
-        gl_FragColor.rgba = vec4(color,1.);
+        vec3 color1 = vec3(1.,0.,0.);
+        vec3 color2 = vec3(1.,1.,0.);
+        vec3 finalColor = mix(color1,color2,vProgress);
+        gl_FragColor.rgba = vec4(finalColor,1.);
       }
     `
   )
@@ -58,8 +70,8 @@ const Tube = ({curve}) => {
   return (
     <>
       <mesh>
-        <tubeGeometry args={[curve, 64, 0.01, 8, false]} />
-        <brainMaterial ref={brainMat} />
+        <tubeGeometry args={[curve, 64, 0.01, 3, false]} />
+        <brainMaterial ref={brainMat} side={THREE.DoubleSide} />
       </mesh>
   </>
   )
