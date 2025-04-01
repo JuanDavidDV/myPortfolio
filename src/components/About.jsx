@@ -13,13 +13,13 @@ const curves = [];
 // Curves look
 for (let i = 0; i < 100; i++) {
   let points = [];
-  let lenght = randomRange(0.1, 1)
+  let length = randomRange(0.1, 1)
   // Points look
   for(let j = 0; j < 100; j++) {  
   points.push(
       new THREE.Vector3().setFromSphericalCoords(
         1,
-        Math.PI - (j / 100) * Math.PI * lenght,
+        Math.PI - (j / 100) * Math.PI * length,
         (i / 100) * Math.PI * 2
       )
     );
@@ -43,12 +43,16 @@ PATHS.forEach((path) => {
   brainCurves.push(tempcurve);
 });
 
-const BrainParticles = (allthecurves) => {
+const BrainParticles = ({ allthecurves }) => {
 
+  const density = 10;
+  let numberOfPoints = density * allthecurves.length;
+  const myPoints = useRef([]);
+  const brainGeo = useRef();
   let positions = useMemo(() => {
     let positions = [];
   
-    for(let i = 0; i < 100; i++) {
+    for(let i = 0; i < numberOfPoints; i++) {
       positions.push(
         randomRange(-1, 1),
         randomRange(-1, 1),
@@ -58,6 +62,36 @@ const BrainParticles = (allthecurves) => {
     }
     return new Float32Array(positions)
   },[])
+
+  useEffect(() => {
+    for (let i = 0; i < allthecurves.length; i++) {
+      for(let j = 0; j < density; j++) {
+        myPoints.current.push({
+          currentOffset: Math.random(),
+          speed: Math.random() * 0.01,
+          curve: allthecurves[i],
+          curPosition: 0
+        });
+      }
+    }
+  });
+
+  useFrame(({clock}) => {
+    let curpositions = brainGeo.current.attributes.position.array;
+
+    for (let i = 0; i < myPoints.current.length; i++) {
+      myPoints.current[i].curPosition += myPoints.current[i].speed;
+      myPoints.current[i].curPosition = myPoints.current[i].curPosition % 1;
+
+      let curPoint = myPoints.current[i].curve.getPointAt(myPoints.current[i].curPosition)
+      curpositions[i * 3] = curPoint.x;
+      curpositions[i * 3 + 1] = curPoint.y;
+      curpositions[i * 3 + 2] = curPoint.z;
+
+    }
+
+    brainGeo.current.attributes.position.needsUpdate = true;
+  });
 
   const BrainParticleMaterial = shaderMaterial(
     { time: 0, color: new THREE.Color(0.1, 0.3, 0.6) },
@@ -78,8 +112,9 @@ const BrainParticles = (allthecurves) => {
     /*glsl*/`
       uniform float time;
       void main() {
-        vec2 st = gl_PointCoord.xy;
-        gl_FragColor = vec4(st,0.,1.);
+        float disc = length(gl_PointCoord.xy - vec2(0.5));
+        float opacity = 0.5 * smoothstep(0.5,0.4,disc);
+        gl_FragColor = vec4(vec3(opacity),1.);
       }
     `
   )
@@ -88,7 +123,7 @@ const BrainParticles = (allthecurves) => {
 
   return <>
   <points>
-    <bufferGeometry attach="geometry">
+    <bufferGeometry attach="geometry" ref={brainGeo} >
       <bufferAttribute
         attach="attributes-position"
         count={positions.length / 3}
