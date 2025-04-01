@@ -82,8 +82,14 @@ const Tube = ({curve}) => {
   return (
     <>
       <mesh>
-        <tubeGeometry args={[curve, 64, 0.01, 3, false]} />
-        <brainMaterial ref={brainMat} side={THREE.DoubleSide} />
+        <tubeGeometry args={[curve, 64, 0.0015, 3, false]} />
+        <brainMaterial 
+          ref={brainMat} 
+          side={THREE.DoubleSide} 
+          transparent={true}
+          depthTest={false}
+          depthWrite={false}
+          blending={THREE.AdditiveBlending} />
       </mesh>
     </>
   )
@@ -177,8 +183,8 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-        <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0 mt-24">
-          <Canvas camera={{position:[0,0,2.5]}} style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
+        <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0 mt-16">
+          <Canvas camera={{position:[0,0,0.3]}} style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
             <color attach="background" args={["black"]}/>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
