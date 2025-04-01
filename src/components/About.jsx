@@ -49,6 +49,7 @@ const BrainParticles = ({ allthecurves }) => {
   let numberOfPoints = density * allthecurves.length;
   const myPoints = useRef([]);
   const brainGeo = useRef();
+
   let positions = useMemo(() => {
     let positions = [];
   
@@ -63,6 +64,17 @@ const BrainParticles = ({ allthecurves }) => {
     return new Float32Array(positions)
   },[])
 
+  let randomSize = useMemo(() => {
+    let randomSize = [];
+  
+    for(let i = 0; i < numberOfPoints; i++) {
+      randomSize.push(
+        randomRange(0.3,1.0)
+      )
+    }
+    return new Float32Array(randomSize)
+  },[])
+
   useEffect(() => {
     for (let i = 0; i < allthecurves.length; i++) {
       for(let j = 0; j < density; j++) {
@@ -70,7 +82,7 @@ const BrainParticles = ({ allthecurves }) => {
           currentOffset: Math.random(),
           speed: Math.random() * 0.01,
           curve: allthecurves[i],
-          curPosition: 0
+          curPosition: Math.random()
         });
       }
     }
@@ -100,12 +112,13 @@ const BrainParticles = ({ allthecurves }) => {
       varying vec2 vUv;
       uniform float time;
       varying float vProgress;
+      attribute float randomSize;
       void main() {
         vUv = uv;
         gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-        gl_PointSize = 3. * (1. / -mvPosition.z);
-        gl_PointSize = 50.0;
+        gl_PointSize = randomSize * 2.0 * (1. / -mvPosition.z);
+        // gl_PointSize = 50.0;
       }
     `,
     // fragment shader
@@ -129,6 +142,12 @@ const BrainParticles = ({ allthecurves }) => {
         count={positions.length / 3}
         array={positions}
         itemSize={3}
+      />
+      <bufferAttribute
+        attach="attributes-randomSize"
+        count={randomSize.length}
+        array={randomSize}
+        itemSize={1}
       />
     </bufferGeometry>
     <brainParticleMaterial 
