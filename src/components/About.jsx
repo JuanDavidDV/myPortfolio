@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
+import { Tubes } from "../assets/Brain-Animation/BrainTubes";
+import * as THREE from "three";
+import { data } from "../assets/Brain-Animation/data";
+import { useEffect, useRef, useState } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { OrbitControls, shaderMaterial } from "@react-three/drei";
-import { data } from "../assets/data";
-import * as THREE from "three";
-import { useEffect, useRef, useState } from "react"
-
-const PATHS = data.economics[0].paths;
 
 const randomRange = (min, max) => Math.random() * (max - min) + min;
 const curves = [];
@@ -29,6 +28,9 @@ for (let i = 0; i < 100; i++) {
   curves.push(tempCurve);
 };
 
+
+const PATHS = data.economics[0].paths;
+
 const brainCurves = [];
 PATHS.forEach((path) => {
   let points = [];
@@ -40,70 +42,8 @@ PATHS.forEach((path) => {
   let tempcurve = new THREE.CatmullRomCurve3(points);
   brainCurves.push(tempcurve);
 });
-console.log('brainCurves', brainCurves)
 
-const Tube = ({curve}) => {
-  const brainMat = useRef();
 
-  useFrame(({clock}) => {
-    brainMat.current.uniforms.time.value = clock.getElapsedTime()
-  })
-
-  const BrainMaterial = shaderMaterial(
-    { time: 0, color: new THREE.Color(0.2, 0.4, 0.1) },
-    // vertex shader
-    /*glsl*/`
-      varying vec2 vUv;
-      uniform float time;
-      varying float vProgress;
-      void main() {
-        vUv = uv;
-        vProgress = smoothstep(-1.,1.,sin(vUv.x * 12. + time * 5.));
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-      }
-    `,
-    // fragment shader
-    /*glsl*/`
-      uniform float time;
-      uniform vec3 color;
-      varying vec2 vUv;
-      varying float vProgress;
-      void main() {
-        vec3 color1 = vec3(1.,0.,0.);
-        vec3 color2 = vec3(1.,1.,0.);
-        vec3 finalColor = mix(color1,color2,vProgress);
-        gl_FragColor.rgba = vec4(finalColor,1.);
-      }
-    `
-  )
-
-  extend({ BrainMaterial });
-
-  return (
-    <>
-      <mesh>
-        <tubeGeometry args={[curve, 64, 0.0015, 3, false]} />
-        <brainMaterial 
-          ref={brainMat} 
-          side={THREE.DoubleSide} 
-          transparent={true}
-          depthTest={false}
-          depthWrite={false}
-          blending={THREE.AdditiveBlending} />
-      </mesh>
-    </>
-  )
-};
-
-const Tubes = () => {
-  return (
-    <>
-      {brainCurves.map((curve, index) => (
-        <Tube curve={curve} key={index} />
-      ))}
-    </>
-  )
-};
 
 const containerVariants = {
   hidden: { opacity: 0, x: -100},
@@ -184,11 +124,11 @@ const About = () => {
           </div>
         </div>
         <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0 mt-16">
-          <Canvas camera={{position:[0,0,0.3]}} style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
+          <Canvas camera={{position:[0.03,0,0.23], near: 0.01, far: 5}} style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
             <color attach="background" args={["black"]}/>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
-            <Tubes />
+            <Tubes allthecurves={brainCurves} />
             <OrbitControls />
           </Canvas>
         </div>
