@@ -239,7 +239,7 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-        <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0 mt-16">
+        <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0">
           <Canvas camera={{position:[0.03,0,0.23], near: 0.01, far: 5}} style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
             <color attach="background" args={["black"]}/>
             <ambientLight />
