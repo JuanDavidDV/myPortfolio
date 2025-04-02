@@ -51,7 +51,7 @@ const iconVariants = (duration) => ({
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-7 mx-5">
+    <section id="skills" className="py-7 mx-5 mt-12 md:mt-0">
       <motion.h2
         whileInView={{ opacity: 1, y:0 }}
         initial={{ opacity: 0, y: -100 }}
