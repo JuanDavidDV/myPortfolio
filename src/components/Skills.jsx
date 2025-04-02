@@ -15,6 +15,8 @@ import { FaSass } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiPostman } from "react-icons/si";
 import { GrHeroku } from "react-icons/gr";
+import { SiThreedotjs } from "react-icons/si";
+import { FaUbuntu } from "react-icons/fa6";
 
 const containerVariants = {
   hidden: { opacity: 0, x: -100},
@@ -63,34 +65,31 @@ const Skills = () => {
         transition={{ duration: 1.5 }}
         className="flex flex-wrap items-center justify-center gap-4 w-[90%] md:w-[80%] m-auto">
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-2 md:p-4">
-          <SiRubyonrails className="text-5xl md:text-7xl text-red-500"/>
-        </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(2)} className="p-2 md:p-4">
           <DiRuby className="text-5xl md:text-7xl text-red-500" />
         </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
-          <RiReactjsLine className="text-5xl md:text-7xl text-cyan-400" />
+        <motion.div initial="initial" animate="animate" variants={iconVariants(2)} className="p-2 md:p-4">
+          <SiRubyonrails className="text-5xl md:text-7xl text-red-500"/>
         </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
+        <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
           <SiJavascript className="text-5xl md:text-7xl text-yellow-400"/>
         </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(2)} className="p-2 md:p-4">
-          <SiMicrosoftsqlserver className="text-5xl md:text-7xl text-red-400" />
-        </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
-          <BiLogoPostgresql className="text-5xl md:text-7xl text-blue-800" />
+          <RiReactjsLine className="text-5xl md:text-7xl text-cyan-400" />
         </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(6)} className="p-2 md:p-4">
+        <motion.div initial="initial" animate="animate" variants={iconVariants(2)} className="p-2 md:p-4">
           <FaNodeJs className="text-5xl md:text-7xl text-green-500" />
         </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(4)} className="p-2 md:p-4">
+        <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
           <SiExpress className="text-5xl md:text-7xl"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-4">
-          <IoLogoGithub className="text-5xl md:text-7xl" />
+          <SiThreedotjs className="text-5xl md:text-7xl"/>
         </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
-          <FaGitAlt className="text-5xl md:text-7xl text-orange-600" />
+        <motion.div initial="initial" animate="animate" variants={iconVariants(6)} className="p-2 md:p-4">
+          <BiLogoPostgresql className="text-5xl md:text-7xl text-blue-800" />
+        </motion.div>
+        <motion.div initial="initial" animate="animate" variants={iconVariants(4)} className="p-2 md:p-4">
+          <SiMicrosoftsqlserver className="text-5xl md:text-7xl text-red-400" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(6)} className="p-2 md:p-4">
           <FaHtml5 className="text-5xl md:text-7xl text-orange-500" />
@@ -99,16 +98,25 @@ const Skills = () => {
           <IoLogoCss3 className="text-5xl md:text-7xl text-blue-600"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-4">
-          <FaSass className="text-5xl md:text-7xl text-pink-500"/>
-        </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
           <RiTailwindCssFill className="text-5xl md:text-7xl text-cyan-700"/>
         </motion.div>
-        <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
-          <SiPostman className="text-5xl md:text-7xl text-orange-500" />
+        <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
+          <FaSass className="text-5xl md:text-7xl text-pink-500"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3.5)} className="p-2 md:p-4">
           <GrHeroku className="text-5xl md:text-7xl text-purple-600"/>
+        </motion.div>
+        <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
+          <FaUbuntu className="text-5xl md:text-7xl text-orange-600" />
+        </motion.div>
+        <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-4">
+          <IoLogoGithub className="text-5xl md:text-7xl" />
+        </motion.div>
+        <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
+          <FaGitAlt className="text-5xl md:text-7xl text-orange-600" />
+        </motion.div>
+        <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
+          <SiPostman className="text-5xl md:text-7xl text-orange-500" />
         </motion.div>
       </motion.div>
     </section>   
