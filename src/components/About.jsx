@@ -222,7 +222,7 @@ const About = () => {
           <div>
             <motion.div initial="hidden" animate="visible" variants={containerVariants}>
               <p className="text-white text-lg md:text-lg w-[100%] md:w-[70%]">
-                Based in <span className="font-bold">Canada</span> 🍁. I am a passionate <span className="font-bold">Software Developer</span>, specialized in <span className="font-bold">Full-stack Development</span> through hands-on learning, and building real-world applications.   
+                Based in <span className="font-bold">Canada</span> 🍁. I am a passionate <span className="font-bold">Software Developer</span>, specialized in <span className="font-bold">Full-Stack and Data Development</span> through hands-on learning, and building real-world applications.   
               </p>
             </motion.div>
           </div>
