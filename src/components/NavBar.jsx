@@ -51,7 +51,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="bg-zinc-600 py-3 fixed w-[100vw] z-[1000] md:top-0">
+    <header className="bg-zinc-600 md:px-10 py-3 fixed w-[100vw] z-[1000] md:top-0">
       <nav className="flex justify-between items-center w-[92%] mx-auto">
         <Link onClick={closeMenu} to="about">
           <button className="text-white rounded-lg font-bold px-1 py-0.5 text-center bg-orange-500 hover:brightness-125 transition-all duration-150">
