@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { Tubes } from "../assets/Brain-Animation/BrainTubes";
+import { Tubes } from "../assets/Animations/Brain-Animation/BrainTubes";
 import * as THREE from "three";
-import { data } from "../assets/Brain-Animation/data";
+import { data } from "../assets/Animations/Brain-Animation/data";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { OrbitControls, shaderMaterial } from "@react-three/drei";

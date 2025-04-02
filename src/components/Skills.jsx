@@ -51,7 +51,7 @@ const iconVariants = (duration) => ({
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-7 px-5 mt-12 md:mt-0 bg-gradient-to-tr from-gray-900 via-blue-900 to-black">
+    <section id="skills" className="py-7 px-5 mt-12 md:mt-0 bg-gradient-to-tr from-gray-900 via-blue-900 to-black animate-ocean-flow">
       <motion.h2
         whileInView={{ opacity: 1, y:0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -65,58 +65,58 @@ const Skills = () => {
         transition={{ duration: 1.5 }}
         className="flex flex-wrap items-center justify-center gap-4 w-[90%] md:w-[80%] m-auto">
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-2 md:p-4">
-          <DiRuby className="text-5xl md:text-7xl text-red-500" />
+          <DiRuby className="text-5xl md:text-7xl text-red-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2)} className="p-2 md:p-4">
-          <SiRubyonrails className="text-5xl md:text-7xl text-red-500"/>
+          <SiRubyonrails className="text-5xl md:text-7xl text-red-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
-          <SiJavascript className="text-5xl md:text-7xl text-yellow-400"/>
+          <SiJavascript className="text-5xl md:text-7xl text-yellow-400 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
-          <RiReactjsLine className="text-5xl md:text-7xl text-cyan-400" />
+          <RiReactjsLine className="text-5xl md:text-7xl text-cyan-400 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2)} className="p-2 md:p-4">
-          <FaNodeJs className="text-5xl md:text-7xl text-green-500" />
+          <FaNodeJs className="text-5xl md:text-7xl text-green-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
-          <SiExpress className="text-5xl md:text-7xl"/>
+          <SiExpress className="text-5xl md:text-7xl drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-4">
-          <SiThreedotjs className="text-5xl md:text-7xl"/>
+          <SiThreedotjs className="text-5xl md:text-7xl drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(6)} className="p-2 md:p-4">
-          <BiLogoPostgresql className="text-5xl md:text-7xl text-blue-800" />
+          <BiLogoPostgresql className="text-5xl md:text-7xl text-blue-800 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(4)} className="p-2 md:p-4">
-          <SiMicrosoftsqlserver className="text-5xl md:text-7xl text-red-400" />
+          <SiMicrosoftsqlserver className="text-5xl md:text-7xl text-red-400 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(6)} className="p-2 md:p-4">
-          <FaHtml5 className="text-5xl md:text-7xl text-orange-500" />
+          <FaHtml5 className="text-5xl md:text-7xl text-orange-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
-          <IoLogoCss3 className="text-5xl md:text-7xl text-blue-600"/>
+          <IoLogoCss3 className="text-5xl md:text-7xl text-blue-600 drop-shadow-[0_0_7px_rgba(255,255,255,0.3)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-4">
-          <RiTailwindCssFill className="text-5xl md:text-7xl text-cyan-700"/>
+          <RiTailwindCssFill className="text-5xl md:text-7xl text-cyan-700 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
-          <FaSass className="text-5xl md:text-7xl text-pink-500"/>
+          <FaSass className="text-5xl md:text-7xl text-pink-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3.5)} className="p-2 md:p-4">
-          <GrHeroku className="text-5xl md:text-7xl text-purple-600"/>
+          <GrHeroku className="text-5xl md:text-7xl text-purple-600 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
-          <FaUbuntu className="text-5xl md:text-7xl text-orange-600" />
+          <FaUbuntu className="text-5xl md:text-7xl text-orange-600 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-4">
-          <IoLogoGithub className="text-5xl md:text-7xl" />
+          <IoLogoGithub className="text-5xl md:text-7xl drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
-          <FaGitAlt className="text-5xl md:text-7xl text-orange-600" />
+          <FaGitAlt className="text-5xl md:text-7xl text-orange-600 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
-          <SiPostman className="text-5xl md:text-7xl text-orange-500" />
+          <SiPostman className="text-5xl md:text-7xl text-orange-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
       </motion.div>
     </section>   
