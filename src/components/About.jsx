@@ -213,7 +213,7 @@ const About = () => {
     return (
       <section
         id="about"
-        className="relative flex flex-col gap-5 lg:mb-24 w-dvh bg-black px-5 md:px-20 min-h-screen">  
+        className="relative flex flex-col gap-5 lg:pb-24 w-dvh bg-black px-5 md:px-20 min-h-screen">  
         <div id="about" className="relative z-10 flex flex-col pt-24">
           <div>
             <h1 className="type-name text-4xl text-white md:text-5xl font-bold"></h1>
