@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="mx-5">
       <div className="flex justify-between mt-28 mb-10">
         <div>
-          <p className="text-xs text-gray-600">Created by <strong>Juan David</strong> 2024 ©. All rights reserved.</p>
+          <p className="text-xs text-gray-600">Created by <strong>Juan David</strong> 2025 ©. All rights reserved.</p>
         </div>
         <div className="flex gap-5 justify-center items-center">
           <a href="https://github.com/JuanDavidDV" target="_blank">
