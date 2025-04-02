@@ -9,8 +9,10 @@ const Home = () => {
   return (
     <main className="home-page">
       <About />
-      <Skills />
-      <Awards />
+      <div className="bg-gradient-to-tr from-gray-900 via-blue-900 to-black animate-ocean-flow">
+        <Skills />
+        <Awards />
+      </div>
       <Projects />
       <Experience />
       <Contact />

@@ -5,12 +5,12 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 const Awards = () => {
   return (
     <section id="awards">
-      <div className="pb-20 px-10 mt-20"> 
+      <div className="pb-20 px-10 pt-20"> 
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1 }}
-          className="pb-20 text-center text-4xl md:text-5xl text-gray-800 font-bold">Awards
+          className="pb-20 text-center text-4xl md:text-5xl text-white font-bold drop-shadow-[0_0_20px_rgba(0,255,243,1)]">Awards
         </motion.h2>
         <div className="flex flex-wrap lg:justify-center">
           <motion.div 
@@ -29,8 +29,8 @@ const Awards = () => {
             initial={{ opacity: 0, x: 100}}
             transition={{ duration: 1 }}
             className="w-full max-w-xl lg:w-[46%] lg:ml-10">
-            <h3 className="mb-2 font-semibold text-2xl">Hackathon Amazon and BrainStation</h3>
-            <p className="mb-4 text-slate-700">Won 1st place in a collaborative hackathon Industry Project featuring Amazon and BrainStation. The main goal was to come up with an innovative solution to the problem statement: "How might we...improve the quality of Amazon reviews while
+            <h3 className="mb-2 font-semibold text-2xl text-white">Hackathon Amazon and BrainStation</h3>
+            <p className="mb-4 text-slate-300">Won 1st place in a collaborative hackathon Industry Project featuring Amazon and BrainStation. The main goal was to come up with an innovative solution to the problem statement: "How might we...improve the quality of Amazon reviews while
                ensuring user's privacy preferences?"    
             </p>
             <div className="mt-4 flex gap-2 items-center">

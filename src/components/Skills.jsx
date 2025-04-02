@@ -51,12 +51,12 @@ const iconVariants = (duration) => ({
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-7 px-5 mt-12 md:mt-0 bg-gradient-to-tr from-gray-900 via-blue-900 to-black animate-ocean-flow">
+    <section id="skills" className="py-7 px-5 mt-12 md:mt-0">
       <motion.h2
         whileInView={{ opacity: 1, y:0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1 }}
-        className="mt-20 mb-20 text-center text-4xl md:text-5xl text-white font-bold">
+        className="mt-20 mb-20 text-center text-4xl md:text-5xl text-white font-bold drop-shadow-[0_0_20px_rgba(0,255,243,1)]">
           Technologies
       </motion.h2>
       <motion.div 
