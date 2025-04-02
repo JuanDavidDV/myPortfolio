@@ -98,7 +98,7 @@ const Skills = () => {
           <IoLogoCss3 className="text-5xl md:text-7xl text-blue-600 drop-shadow-[0_0_7px_rgba(255,255,255,0.3)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-4">
-          <RiTailwindCssFill className="text-5xl md:text-7xl text-cyan-700 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
+          <RiTailwindCssFill className="text-5xl md:text-7xl text-cyan-700 drop-shadow-[0_0_7px_rgba(255,255,255,0.3)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
           <FaSass className="text-5xl md:text-7xl text-pink-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
@@ -113,7 +113,7 @@ const Skills = () => {
           <IoLogoGithub className="text-5xl md:text-7xl drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(3)} className="p-2 md:p-4">
-          <FaGitAlt className="text-5xl md:text-7xl text-orange-600 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
+          <FaGitAlt className="text-5xl md:text-7xl text-orange-600 drop-shadow-[0_0_7px_rgba(255,255,255,0.3)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
           <SiPostman className="text-5xl md:text-7xl text-orange-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
