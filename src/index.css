@@ -24,5 +24,15 @@ body {
 
 .animate-ocean-flow {
   background-size: 300% 300%;
-  animation: ocean-flow 6s linear infinite;
+  animation: ocean-flow 5s linear infinite;
 }
+
+@keyframes waveGradient {
+}
+
+.bg-gradient {
+  background: linear-gradient(270deg, #8b0000, #ff4500);
+  background-size: 300% 300%;
+}
+
+
