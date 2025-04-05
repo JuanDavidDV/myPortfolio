@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <main className="home-page">
       <About />
-      <div className="bg-gradient-to-tr from-gray-900 via-blue-900 to-black animate-ocean-flow">
+      <div className="bg-gradient-to-t from-black via-emerald-950 to-black">
         <Skills />
         <Awards />
       </div>

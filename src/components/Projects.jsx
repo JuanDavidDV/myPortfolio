@@ -1,87 +1,11 @@
 import { PROJECTS } from "../constants";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 
 const Projects = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);  
-
-    const stars = [];
-    const numStars = 200;
-
-    for (let i = 0; i < numStars; i++) {
-      stars.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        radius: Math.random() * 1.5 + 0.5,
-        vx: (Math.random() - 0.5) * 1.0,
-        vy: (Math.random() - 0.5) * 1.0,
-      });
-    }
-
-    const drawStars = () => {
-      ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "white";
-
-      for (let i = 0; i < stars.length; i++) {
-        const s = stars[i];
-        s.x += s.vx;
-        s.y += s.vy;
-
-        if (s.x < 0 || s.x > width) s.vx *= -1;
-        if (s.y < 0 || s.y > height) s.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      drawLines();
-    }
-
-    const drawLines = () => {
-      for (let i = 0; i < stars.length; i++) {
-        for (let j = i + 1; j < stars.length; j++) {
-          const dx = stars[i].x - stars[j].x;
-          const dy = stars[i].y - stars[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
-            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 100})`;
-            ctx.beginPath();
-            ctx.moveTo(stars[i].x, stars[i].y);
-            ctx.lineTo(stars[j].x, stars[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-    };
-
-    const animate = () => {
-      drawStars();
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    const handleResize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+ 
   return (
-    <section id="projects" className="px-10 relative bg-black overflow-hidden">
-      <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none" />
+    <section id="projects" className="px-10 bg-gradient-to-b from-black via-yellow-950 to-black">
       <div className="relative z-10">
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +61,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  )
+  );
 };
 
 export default Projects;
