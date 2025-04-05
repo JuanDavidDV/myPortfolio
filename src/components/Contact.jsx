@@ -54,7 +54,7 @@ const ContactMe = () => {
   };
 
   return (
-    <section id="contact" className="flex items-center justify-center bg-gray-100 pt-40 pb-20 px-4 sm:px-6 lg:px-8 bg-stone-50">
+    <section id="contact" className="flex items-center justify-center bg-gradient-to-t from-teal-600 to-black pt-40 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-lg w-full bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Contact Me</h2>
         <div className="flex gap-10 justify-center items-center">
