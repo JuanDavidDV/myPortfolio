@@ -25,7 +25,7 @@ const Projects = () => {
       });
     }
 
-    function drawStars() {
+    const drawStars = () => {
       ctx.clearRect(0, 0, width, height);
       ctx.fillStyle = "white";
 
@@ -45,7 +45,7 @@ const Projects = () => {
       drawLines();
     }
 
-    function drawLines() {
+    const drawLines = () => {
       for (let i = 0; i < stars.length; i++) {
         for (let j = i + 1; j < stars.length; j++) {
           const dx = stars[i].x - stars[j].x;
@@ -61,9 +61,9 @@ const Projects = () => {
           }
         }
       }
-    }
+    };
 
-    function animate() {
+    const animate = () => {
       drawStars();
       requestAnimationFrame(animate);
     }
