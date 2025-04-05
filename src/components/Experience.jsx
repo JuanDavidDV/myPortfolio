@@ -4,58 +4,54 @@ import { motion } from "framer-motion";
 
 const Experience = () => {
   const canvasRef = useRef(null);
+  const animationRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     const fontSize = 14;
-    const columns = Math.floor(width / fontSize);
+    const columns = Math.floor(window.innerWidth / fontSize);
     const drops = Array(columns).fill(0);
 
     const drawMatrixRain = () => {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, width, height);
-    
+      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
       ctx.fillStyle = "rgba(31, 129, 1, 0.56)";
       ctx.font = `${fontSize}px monospace`;
-    
-      const columnSpacing = 1; // Space between columns 
-    
+
       for (let i = 0; i < drops.length; i++) {
         if (Math.random() > 0.5) continue;
-    
+
         const character = characters[Math.floor(Math.random() * characters.length)];
-        const x = i * fontSize * columnSpacing; // Increase column spacing
+        const x = i * fontSize;
         const y = drops[i] * fontSize;
-    
+
         ctx.fillText(character, x, y);
-    
-        // If a drop is beyond the screen, reset it to the top with a random chance
-        if (y > height && Math.random() > 0.975) {
+
+        if (y > window.innerHeight && Math.random() > 0.975) {
           drops[i] = 0;
         }
-    
-        // Controls drops speed
+
         drops[i] = drops[i] + 0.5;
       }
-    }
-    
+    };
+
     const animate = () => {
       drawMatrixRain();
-      setTimeout(() => {
-        requestAnimationFrame(animate);
-      }, 1000 / 30); 
-    }
-    
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
     animate();
 
     const handleResize = () => {
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
 
     window.addEventListener("resize", handleResize);
