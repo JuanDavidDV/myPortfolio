@@ -17,20 +17,3 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes ocean-flow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.animate-ocean-flow {
-  background-size: 300% 300%;
-  animation: ocean-flow 5s linear infinite;
-}
-
-@keyframes waveGradient {
-}
-
-.bg-gradient {
-  background: linear-gradient(270deg, #8b0000, #ff4500);
-  background-size: 300% 300%;
-}
