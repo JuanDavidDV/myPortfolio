@@ -20,10 +20,10 @@ const Experience = () => {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, width, height);
     
-      ctx.fillStyle = "#0F0";
+      ctx.fillStyle = "rgba(31, 129, 1, 0.56)";
       ctx.font = `${fontSize}px monospace`;
     
-      const columnSpacing = 2; // Space between columns 
+      const columnSpacing = 1; // Space between columns 
     
       for (let i = 0; i < drops.length; i++) {
         if (Math.random() > 0.5) continue;
@@ -40,7 +40,7 @@ const Experience = () => {
         }
     
         // Controls drops speed
-        drops[i] = drops[i] + 0.75;
+        drops[i] = drops[i] + 0.5;
       }
     }
     
@@ -48,7 +48,7 @@ const Experience = () => {
       drawMatrixRain();
       setTimeout(() => {
         requestAnimationFrame(animate);
-      }, 1000 / 60); 
+      }, 1000 / 30); 
     }
     
     animate();
@@ -102,15 +102,15 @@ const Experience = () => {
                 transition={{ duration: 1 }}
                 className="w-full max-w-xl lg:w-3/4"
               >
-                <h3 className="mb-2 font-semibold">
+                <h3 className="mb-2 font-semibold text-white">
                   {experience.role} -{" "}
-                  <span className="text-sm text-slate-600">
+                  <span className="text-sm text-slate-200">
                     {experience.company}
                   </span>
                 </h3>
                 <ul className="my-5 list-disc ml-5 space-y-2">
                   {experience.description.map((point, index) => (
-                    <li key={`experience-point-${index}`} className="text-sm">
+                    <li key={`experience-point-${index}`} className="text-sm text-white">
                       {point}
                     </li>
                   ))}
