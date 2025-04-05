@@ -1,38 +1,112 @@
+import { useEffect, useRef } from "react";
 import { EXPERIENCE } from "../constants";
 import { motion } from "framer-motion";
 
 const Experience = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let width = (canvas.width = canvas.offsetWidth);
+    let height = (canvas.height = canvas.offsetHeight);
+
+    const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    const fontSize = 14;
+    const columns = Math.floor(width / fontSize);
+    const drops = Array(columns).fill(0);
+
+    const drawMatrixRain = () => {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, width, height);
+    
+      ctx.fillStyle = "#0F0";
+      ctx.font = `${fontSize}px monospace`;
+    
+      const columnSpacing = 2; // Space between columns 
+    
+      for (let i = 0; i < drops.length; i++) {
+        if (Math.random() > 0.5) continue;
+    
+        const character = characters[Math.floor(Math.random() * characters.length)];
+        const x = i * fontSize * columnSpacing; // Increase column spacing
+        const y = drops[i] * fontSize;
+    
+        ctx.fillText(character, x, y);
+    
+        // If a drop is beyond the screen, reset it to the top with a random chance
+        if (y > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+    
+        // Controls drops speed
+        drops[i] = drops[i] + 0.75;
+      }
+    }
+    
+    const animate = () => {
+      drawMatrixRain();
+      setTimeout(() => {
+        requestAnimationFrame(animate);
+      }, 1000 / 60); 
+    }
+    
+    animate();
+
+    const handleResize = () => {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <section id="experience">
-      <div className="px-10 pt-10 bg-sky-50">
+    <section id="experience" className="relative overflow-hidden">
+      <canvas
+        ref={canvasRef}
+        className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"
+      />
+      <div className="relative z-10 px-10 pt-10">
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1 }}
-          className="py-20 text-center text-4xl md:text-5xl text-gray-800 font-bold">Experience
+          className="py-20 text-center text-4xl md:text-5xl text-white font-bold drop-shadow-[0_0_20px_rgba(0,255,243,1)]"
+        >
+          Experience
         </motion.h2>
+
         <div>
           {EXPERIENCE.map((experience, index) => (
             <div key={index} className="pb-8 flex flex-wrap lg:justify-center">
-              <motion.div 
+              <motion.div
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: -100 }}
                 transition={{ duration: 1 }}
-                className="w-full lg:w-1/4">
-                <p className="mb-2 text-sm text-slate-700">
-                  {experience.year}
-                </p>
-                <img width={150} height={100} className="mb-3 rounded" src={experience.image}/>
+                className="w-full lg:w-1/4"
+              >
+                <p className="mb-2 text-sm text-slate-300">{experience.year}</p>
+                <img
+                  width={150}
+                  height={100}
+                  className="mb-3 rounded bg-white"
+                  src={experience.image}
+                  alt={experience.company}
+                />
               </motion.div>
-              <motion.div 
+              <motion.div
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: 100 }}
                 transition={{ duration: 1 }}
-                className="w-full max-w-xl lg:w-3/4">
-                <h3 className="mb-2 font-semibold">{experience.role} -{" "} 
+                className="w-full max-w-xl lg:w-3/4"
+              >
+                <h3 className="mb-2 font-semibold">
+                  {experience.role} -{" "}
                   <span className="text-sm text-slate-600">
-                    {experience.company}  
-                  </span>    
+                    {experience.company}
+                  </span>
                 </h3>
                 <ul className="my-5 list-disc ml-5 space-y-2">
                   {experience.description.map((point, index) => (
@@ -41,13 +115,13 @@ const Experience = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>    
+              </motion.div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 };
 
 export default Experience;
