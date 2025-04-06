@@ -51,33 +51,33 @@ const NavBar = () => {
   };
 
   return (
-    <header className="bg-zinc-600 md:px-10 py-3 fixed w-[100vw] z-[1000] md:top-0">
+    <header className="bg-black md:px-10 py-3 fixed w-[100vw] z-[1000] md:top-0">
       <nav className="flex justify-between items-center w-[92%] mx-auto">
         <Link onClick={closeMenu} to="about">
-          <button className="text-white rounded-lg font-bold px-1 py-0.5 text-center bg-orange-500 hover:brightness-125 transition-all duration-150">
+          <button className="text-white rounded-lg font-bold px-1 py-0.5 text-center bg-cyan-500 hover:brightness-50 transition-all duration-150">
             Juan David DV
           </button>
         </Link>
         {(menuStatus || !isMobile) && 
-          <div className={`top-[53px] duration-300 z-[1000] md:static absolute bg-zinc-600 md:min-h-fit min-h-80 left-0 top-[-100%] md:w-auto w-full flex items-center px-5`}>
+          <div className={`top-[53px] duration-300 z-[1000] md:static absolute md:min-h-fit min-h-80 left-0 top-[-100%] md:w-auto w-full flex items-center px-5`}>
             <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-12">
               <li>
-                <Link to="about" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "about" ? "bg-blue-500" : ""}`}>
+                <Link to="about" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-indigo-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "about" ? "bg-teal-500" : ""}`}>
                   About
                 </Link>
               </li>
               <li>
-                <Link to="projects" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "projects" ? "bg-blue-500" : ""} `}>
+                <Link to="projects" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-indigo-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "projects" ? "bg-teal-500" : ""} `}>
                   Projects
                 </Link>
               </li>
               <li>
-                <Link to="experience" onClick={closeMenu}  className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "experience" ? "bg-blue-500" : ""}`}>
+                <Link to="experience" onClick={closeMenu}  className={`text-white px-2.5 py-1 hover:bg-indigo-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "experience" ? "bg-teal-500" : ""}`}>
                   Experience
                 </Link>
               </li>
               <li>
-                <Link to="contact" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-blue-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "contact" ? "bg-blue-500" : ""}`}>
+                <Link to="contact" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-indigo-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "contact" ? "bg-teal-500" : ""}`}>
                   Contact
                 </Link>
               </li>
