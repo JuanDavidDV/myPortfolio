@@ -54,7 +54,7 @@ const NavBar = () => {
     <header className="bg-black md:px-10 py-3 fixed w-[100vw] z-[1000] md:top-0">
       <nav className="flex justify-between items-center w-[92%] mx-auto">
         <Link onClick={closeMenu} to="about">
-          <button className="text-white rounded-lg font-bold px-1 py-0.5 text-center bg-cyan-500 hover:brightness-50 transition-all duration-150">
+          <button className="text-white rounded-lg font-bold px-1 py-0.5 text-center bg-cyan-500 hover:bg-indigo-500 transition-all duration-150">
             Juan David DV
           </button>
         </Link>

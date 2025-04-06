@@ -7,6 +7,7 @@ import { data } from "../assets/Animations/Brain-Animation/data";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { OrbitControls, shaderMaterial } from "@react-three/drei";
+import { Link } from "react-scroll";
 
 const randomRange = (min, max) => Math.random() * (max - min) + min;
 const curves = [];
@@ -226,15 +227,18 @@ const About = () => {
               </p>
             </motion.div>
           </div>
-          <div className="w-[40%]">
+          <div className="w-[70%] md:w-[40%]">
             <motion.div initial="hidden" animate="visible" variants={containerVariants}>
-              <div className="pt-2 flex gap-7">
+              <div className="pt-2 flex items-center gap-3 md:gap-7 w-full">
                 <a href="https://github.com/JuanDavidDV" target="_blank">
-                  <BsGithub className="w-10 bg-white mt-3 text-5xl opacity-60 hover:opacity-100 rounded-xl" />
+                  <BsGithub className="w-10 p-1 bg-white text-5xl opacity-60 hover:opacity-100 rounded-xl" />
                 </a>
                 <a href="https://www.linkedin.com/in/juan-david-dv/" target="_blank">
-                  <IoLogoLinkedin className="w-10 bg-white mt-3 text-5xl opacity-60 hover:opacity-100 rounded-xl" />
+                  <IoLogoLinkedin className="w-10 p-0.5 bg-white text-5xl opacity-60 hover:opacity-100 rounded-xl" />
                 </a>
+                <Link to="contact" className="h-10 text-sm md:text-base text-white bg-teal-500 hover:bg-indigo-500 rounded-lg transition-all duration-150 p-2 font-bold cursor-pointer flex items-center">
+                  Contact Me
+                </Link>
               </div>
             </motion.div>
           </div>
