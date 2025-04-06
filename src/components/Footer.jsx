@@ -11,13 +11,13 @@ const Footer = () => {
         </div>
         <div className="flex gap-5 justify-center items-center">
           <a href="https://github.com/JuanDavidDV" target="_blank">
-            <img src={github} className="w-5 pt-1 opacity-60 hover:opacity-100 rounded-xl bg-white"/>
+            <img src={github} className="p-0.5 opacity-60 hover:opacity-100 bg-white w-[25px] h-[25px] flex justify-center items-center rounded-full"/>
           </a>
           <a href="https://www.linkedin.com/in/juan-david-dv/" target="_blank">
-            <img src={linkedin} className="w-6 pt-1 opacity-60 hover:opacity-100 rounded-xl bg-white"/>
+            <img src={linkedin} className="p-0.5 opacity-60 hover:opacity-100 bg-white w-[25px] h-[25px] flex justify-center items-center rounded-full"/>
           </a>
           <a href="mailto:juandadazav@gmail.com">
-            <MdOutlineEmail className="pt-1 text-2xl opacity-60 hover:opacity-100 rounded-xl bg-white" />
+            <MdOutlineEmail className="p-0.5 opacity-60 hover:opacity-100 bg-white w-[25px] h-[25px] flex justify-center items-center rounded-full" />
           </a>
         </div>
       </div>
