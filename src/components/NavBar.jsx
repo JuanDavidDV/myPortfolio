@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Element, Link } from "react-scroll";
 
 const SECTIONS = ["about", "skills", "awards", "projects", "experience", "contact"];
@@ -8,9 +8,31 @@ const NavBar = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [width, setWidth] = useState(window.innerWidth);
 
-  function handleWindowSizeChange() {
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuStatus &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        event.target.id !== "toggle-menu"
+      ) {
+        closeMenu();
+      }
+    };
+  
+    document.addEventListener("mousedown", handleClickOutside);
+  
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuStatus]);
+
+  const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
   }
+
   const isMobile = width <= 768;
 
   const handleScroll = () => {
@@ -59,7 +81,7 @@ const NavBar = () => {
           </button>
         </Link>
         {(menuStatus || !isMobile) && 
-          <div className={`top-[53px] duration-300 z-[1000] md:static absolute md:min-h-fit min-h-80 left-0 top-[-100%] md:w-auto w-full flex items-center px-5`}>
+          <div ref={menuRef} className={`bg-black top-[53px] duration-300 z-[1000] md:static absolute md:min-h-fit min-h-80 left-0 top-[-100%] md:w-auto w-full flex items-center px-5`}>
             <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-12">
               <li>
                 <Link to="about" onClick={closeMenu} className={`text-white px-2.5 py-1 hover:bg-indigo-500 rounded-lg font-semi-bold transition-all duration-350 cursor-pointer ${activeSection === "about" ? "bg-teal-500" : ""}`}>
