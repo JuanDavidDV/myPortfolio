@@ -10,13 +10,15 @@ const Awards = () => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1 }}
+          viewport={{ once: true }}
           className="pb-20 text-center text-4xl md:text-5xl text-white font-bold drop-shadow-[0_0_20px_rgba(0,255,243,1)]">Awards
         </motion.h2>
         <div className="flex flex-wrap lg:justify-center">
           <motion.div 
             whileInView={{ opacity: 1, x: 0}}
             initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}  
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}  
             className="w-full lg:w-[36%]">
             <div className="max-w-[400px] w-full lg:max-w-[none]">
               <a href="https://github.com/JuanDavidDV/amazon-industry-project" target="_blank">
@@ -28,6 +30,7 @@ const Awards = () => {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100}}
             transition={{ duration: 1 }}
+            viewport={{ once: true }}
             className="w-full max-w-xl lg:w-[46%] lg:ml-10">
             <h3 className="mb-2 font-semibold text-2xl text-white">Hackathon Amazon and BrainStation</h3>
             <p className="mb-4 text-slate-300">Won 1st place in a collaborative hackathon Industry Project featuring Amazon and BrainStation. The main goal was to come up with an innovative solution to the problem statement: "How might we...improve the quality of Amazon reviews while

@@ -56,6 +56,7 @@ const Skills = () => {
         whileInView={{ opacity: 1, y:0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="my-20 text-center text-4xl md:text-5xl text-white font-bold drop-shadow-[0_0_20px_rgba(0,255,243,1)]">
           Technologies
       </motion.h2>
@@ -63,6 +64,7 @@ const Skills = () => {
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
         className="flex flex-wrap items-center justify-center gap-4 w-[90%] md:w-[80%] m-auto">
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-2 md:p-4">
           <DiRuby className="text-5xl md:text-7xl text-red-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />

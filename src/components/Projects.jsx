@@ -11,6 +11,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1 }}
+          viewport={{ once: true }}
           className="py-20 text-center text-4xl md:text-5xl text-white font-bold drop-shadow-[0_0_20px_rgba(0,255,243,1)]">Projects</motion.h2>
         <div>
           {PROJECTS.map((project, index) => (
@@ -19,6 +20,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: -100 }}
                 transition={{ duration: 1 }}
+                viewport={{ once: true }}
                 className="w-full lg:w-1/4">
                 <div className="max-w-[400px] w-full lg:max-w-[none]">
                   <a href={project.link} target="_blank" >
@@ -35,6 +37,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: 100 }}
                 transition={{ duration: 1 }}
+                viewport={{ once: true }}
                 className="w-full max-w-xl lg:w-3/4 lg:ml-10">
                 <h3 className="mb-2 font-semibold text-2xl text-white">{project.title}</h3>
                 <p className="mb-4 text-slate-300">{project.description}</p>
