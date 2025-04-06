@@ -80,10 +80,10 @@ const Skills = () => {
           <FaNodeJs className="text-5xl md:text-7xl text-green-500 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(5)} className="p-2 md:p-4">
-          <SiExpress className="text-5xl md:text-7xl drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
+          <SiExpress className="text-5xl md:text-7xl text-white drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2.5)} className="p-2 md:p-4">
-          <SiThreedotjs className="text-5xl md:text-7xl drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
+          <SiThreedotjs className="text-5xl md:text-7xl text-white drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]"/>
         </motion.div>
         <motion.div initial="initial" animate="animate" variants={iconVariants(6)} className="p-2 md:p-4">
           <BiLogoPostgresql className="text-5xl md:text-7xl text-blue-800 drop-shadow-[0_0_7px_rgba(255,255,255,0.5)]" />
