@@ -116,7 +116,7 @@ const ContactMe = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="w-full sm:w-auto px-6 py-3 text-white bg-indigo-600 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+              className="w-full sm:w-auto px-6 py-3 text-white bg-teal-500 rounded-md shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
             >
               Submit
             </button>
