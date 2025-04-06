@@ -44,13 +44,13 @@ const Experience = () => {
               >
                 <h3 className="mb-2 font-semibold text-white">
                   {experience.role} -{" "}
-                  <span className="text-sm text-slate-200">
+                  <span className="text-l text-slate-200">
                     {experience.company}
                   </span>
                 </h3>
                 <ul className="my-5 list-disc ml-5 space-y-2">
                   {experience.description.map((point, index) => (
-                    <li key={`experience-point-${index}`} className="text-sm text-white">
+                    <li key={`experience-point-${index}`} className="text-base text-white">
                       {point}
                     </li>
                   ))}
