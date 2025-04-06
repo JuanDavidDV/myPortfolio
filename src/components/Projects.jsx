@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Projects = () => {
  
   return (
-    <section id="projects" className="px-10 bg-gradient-to-b from-black via-yellow-950 to-black">
+    <section id="projects" className="px-10 bg-gradient-to-b from-black via-indigo-900 to-black">
       <div className="relative z-10">
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
