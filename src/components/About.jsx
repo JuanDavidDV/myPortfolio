@@ -236,14 +236,14 @@ const About = () => {
                 <a href="https://www.linkedin.com/in/juan-david-dv/" target="_blank">
                   <IoLogoLinkedin className="w-10 p-0.5 bg-white text-5xl opacity-60 hover:opacity-100 rounded-xl" />
                 </a>
-                <Link to="contact" className="h-10 text-sm md:text-base text-white bg-teal-500 hover:bg-indigo-500 rounded-lg transition-all duration-150 p-2 font-bold cursor-pointer flex items-center">
+                <Link to="contact" className="h-10 text-sm md:text-base text-white opacity-80 hover:opacity-100 bg-teal-500 hover:bg-indigo-500 rounded-lg transition-all duration-150 p-2 font-bold cursor-pointer flex items-center">
                   Contact Me
                 </Link>
               </div>
             </motion.div>
           </div>
         </div>
-        <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0 mt-32 md:mt-16">
+        <div ref={canvasContainerRef} className="absolute left-0 w-full h-full z-0 mt-36 md:mt-16">
           <Canvas camera={{position:[0.03,0,0.23], near: 0.01, far: 5}} style={{ width: "100%", height: canvasHeight }} className="absolute top-0 left-0">
             <color attach="background" args={["black"]}/>
             <ambientLight />
