@@ -236,7 +236,7 @@ const About = () => {
                 <a href="https://www.linkedin.com/in/juan-david-dv/" target="_blank">
                   <IoLogoLinkedin className="w-10 p-0.5 bg-white text-5xl opacity-60 hover:opacity-100 rounded-xl" />
                 </a>
-                <Link to="contact" className="h-10 text-sm md:text-base text-white opacity-80 hover:opacity-100 bg-teal-500 hover:bg-indigo-500 rounded-lg transition-all duration-150 p-2 font-bold cursor-pointer flex items-center">
+                <Link to="contact" className="h-10 text-sm md:text-base text-white opacity-95 hover:opacity-100 bg-teal-500 hover:bg-indigo-500 rounded-lg transition-all duration-150 p-2 font-bold cursor-pointer flex items-center">
                   Contact Me
                 </Link>
               </div>
