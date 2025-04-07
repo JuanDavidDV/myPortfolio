@@ -5,7 +5,7 @@ Based in Canada 🍁. I am a passionate Software Developer, specialized in Full-
 # Technologies used to develop this portfolio:
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=js,react,tailwind,vscode,git" />
+    <img src="https://skillicons.dev/icons?i=js,react,tailwind,threejs,vscode,git" />
   </a>
 </p>
 
