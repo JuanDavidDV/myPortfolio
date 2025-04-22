@@ -14,7 +14,7 @@ export const PROJECTS = [
     title: "Spotify-Rails",
     image: spotifyRails,
     description: "Spotify-Rails is a streaming music platform enabling artist payments via Stripe.",
-    technologies: ["Ruby on Rails", "Stimulus ", "Postgresql", "Tailwind", "Cron Jobs", "AWS"],
+    technologies: ["Ruby on Rails", "Stimulus ", "Minitest", "Cron Jobs", "Postgresql", "Tailwind", "AWS"],
     link: "https://spotify-rails-5858064d71c3.herokuapp.com",
     githubLink: "https://github.com/JuanDavidDV/spotify-rails"
   },
