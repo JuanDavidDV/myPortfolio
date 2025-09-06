@@ -7,14 +7,9 @@ import ScrollToTop from "./utils/ScrollToTop"; {/* Add Scroll to top when openin
 function App() {
 
   return (
-  <BrowserRouter>
-    <ScrollToTop /> 
-    <NavBar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
-    <Footer />
-  </BrowserRouter>
+<>
+    Under maintenance...
+</>
   )
 };
 
