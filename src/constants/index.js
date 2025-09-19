@@ -70,7 +70,7 @@ export const PROJECTS = [
 
 export const EXPERIENCE = [
   {
-    year: "May 2023 - Present",
+    year: "May 2023 - August 2025",
     image: ocpLogo,
     role: "Data Developer",
     company: "Ontario College of Pharmacists",
@@ -93,7 +93,7 @@ export const EXPERIENCE = [
     ]
   },
   {
-    year: "November 2021 - May 2023",
+    year: "January 2021 - May 2021",
     image: ocpLogo,
     role: "Information Technology Processes (Internship)",
     company: "Ontario College of Pharmacists",
