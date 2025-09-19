@@ -8,7 +8,14 @@ function App() {
 
   return (
 <>
-    Under maintenance...
+    <BrowserRouter>
+      <ScrollToTop />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
 </>
   )
 };
